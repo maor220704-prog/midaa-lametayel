@@ -1,43 +1,67 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { cities } from "../data/cities";
-import { restaurantsByCity } from "../data/restaurants";
-import { attractionsByCity } from "../data/attractions";
-import { warningsByCity } from "../data/warnings";
+import { placesByCity, warningsByCity } from "../data/cities/index";
+import { isCityId, type Category, type CityId } from "../types";
 import Icon from "../components/Icon";
+import PlaceCard from "../components/PlaceCard";
 
-type SectionKey = "info" | "restaurants" | "attractions" | "warnings";
+type TabKey = "info" | "food" | "see" | "shop" | "special" | "warnings";
 
-const sectionIcons: Record<SectionKey, string> = {
-  info: "info",
-  restaurants: "restaurant",
-  attractions: "tour",
-  warnings: "warning",
-};
+/**
+ * Tabs are a grouping of categories, not a mirror of them. Six chips wrap to
+ * two rows at 375px and stay fully visible; one chip per category would be
+ * eight, which forces a horizontal scroll that hides half of them.
+ * Re-grouping later is an edit here, not a data migration.
+ */
+const TAB_GROUPS: {
+  key: TabKey;
+  label: string;
+  icon: string;
+  categories: Category[];
+}[] = [
+  { key: "info", label: "מידע כללי", icon: "info", categories: [] },
+  { key: "food", label: "מסעדות", icon: "restaurant", categories: ["restaurant"] },
+  { key: "see", label: "אטרקציות", icon: "tour", categories: ["attraction", "scenic"] },
+  { key: "shop", label: "שווקים", icon: "storefront", categories: ["market", "tailor"] },
+  { key: "special", label: "מיוחדים", icon: "auto_awesome", categories: ["special"] },
+  { key: "warnings", label: "אזהרות", icon: "warning", categories: [] },
+];
 
 export default function CityPage() {
   const { cityId } = useParams<{ cityId: string }>();
   const city = cities.find((c) => c.id === cityId);
-  const restaurants = cityId ? restaurantsByCity[cityId] ?? [] : [];
-  const attractions = cityId ? attractionsByCity[cityId] ?? [] : [];
-  const warnings = cityId ? warningsByCity[cityId] ?? [] : [];
 
-  const isCityPopulated = !!city?.generalInfo || restaurants.length > 0 || attractions.length > 0;
+  const validId: CityId | undefined = isCityId(cityId) ? cityId : undefined;
+  const places = validId ? placesByCity[validId] : [];
+  const warnings = validId ? warningsByCity[validId] : [];
 
-  const sections: { key: SectionKey; label: string; hasContent: boolean }[] = [
-    { key: "info", label: "מידע כללי", hasContent: !!city?.generalInfo },
-    { key: "restaurants", label: "מסעדות", hasContent: restaurants.length > 0 },
-    { key: "attractions", label: "אטרקציות", hasContent: attractions.length > 0 },
-    { key: "warnings", label: "אזהרות", hasContent: isCityPopulated },
-  ];
+  const placesFor = (categories: Category[]) =>
+    places.filter((p) => categories.includes(p.category));
+
+  const isCityPopulated = !!city?.generalInfo || places.length > 0;
+
+  const sections = TAB_GROUPS.map((tab) => {
+    const items = placesFor(tab.categories);
+    let hasContent: boolean;
+    if (tab.key === "info") hasContent = !!city?.generalInfo;
+    // The warnings tab stays visible for any populated city and shows a
+    // reassuring empty state, rather than vanishing (design.md section 6).
+    else if (tab.key === "warnings") hasContent = isCityPopulated;
+    else hasContent = items.length > 0;
+    return { ...tab, items, hasContent };
+  });
+
   const availableSections = sections.filter((s) => s.hasContent);
 
-  const [activeTab, setActiveTab] = useState<SectionKey | null>(
+  const [activeTab, setActiveTab] = useState<TabKey | null>(
     availableSections[0]?.key ?? null
   );
   const currentTab = availableSections.some((s) => s.key === activeTab)
     ? activeTab
     : availableSections[0]?.key ?? null;
+
+  const current = availableSections.find((s) => s.key === currentTab);
 
   if (!city) {
     return (
@@ -65,18 +89,18 @@ export default function CityPage() {
         </div>
 
         {availableSections.length > 0 && (
-          <div className="mt-4 flex gap-2 overflow-x-auto">
+          <div className="mt-4 flex flex-wrap gap-2">
             {availableSections.map((s) => (
               <button
                 key={s.key}
                 onClick={() => setActiveTab(s.key)}
-                className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
                   currentTab === s.key
                     ? "bg-on-primary text-primary"
                     : "bg-on-primary/15 text-on-primary"
                 }`}
               >
-                <Icon name={sectionIcons[s.key]} className="text-[18px]" />
+                <Icon name={s.icon} className="text-[18px]" />
                 {s.label}
               </button>
             ))}
@@ -87,57 +111,39 @@ export default function CityPage() {
       <main className="px-4 py-5">
         {availableSections.length === 0 ? (
           <p className="text-on-surface-variant">אין עדיין מידע לעיר הזאת.</p>
-        ) : (
-          <>
-            {currentTab === "info" && (
-              <p className="leading-relaxed text-on-surface">{city.generalInfo}</p>
-            )}
-
-            {currentTab === "restaurants" && (
-              <ul className="flex flex-col gap-3">
-                {restaurants.map((r) => (
-                  <li
-                    key={r.name}
-                    className="rounded-xl bg-surface p-4 shadow-[0_8px_20px_-4px_rgba(115,121,113,0.12)]"
-                  >
-                    <p className="text-lg font-semibold text-on-surface">{r.name}</p>
-                    <p className="mt-1 leading-relaxed text-on-surface-variant">{r.description}</p>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {currentTab === "attractions" && (
-              <ul className="flex flex-col gap-3">
-                {attractions.map((a) => (
-                  <li
-                    key={a.name}
-                    className="rounded-xl bg-surface p-4 shadow-[0_8px_20px_-4px_rgba(115,121,113,0.12)]"
-                  >
-                    <p className="text-lg font-semibold text-on-surface">{a.name}</p>
-                    <p className="mt-1 leading-relaxed text-on-surface-variant">{a.description}</p>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {currentTab === "warnings" &&
-              (warnings.length > 0 ? (
-                <ul className="flex flex-col gap-3">
-                  {warnings.map((w, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 rounded-xl border border-error/20 bg-error-container p-4"
-                    >
-                      <Icon name="gpp_maybe" className="mt-0.5 shrink-0 text-on-error-container" />
-                      <p className="leading-relaxed text-on-error-container">{w}</p>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-on-surface-variant">אין אזהרות מיוחדות לעיר זו.</p>
+        ) : currentTab === "info" ? (
+          <p className="leading-relaxed text-on-surface">{city.generalInfo}</p>
+        ) : currentTab === "warnings" ? (
+          warnings.length > 0 ? (
+            <ul className="flex flex-col gap-3">
+              {warnings.map((w) => (
+                <li
+                  key={w.id}
+                  className="flex gap-3 rounded-xl border border-error/20 bg-error-container p-4"
+                >
+                  <Icon name="gpp_maybe" className="mt-0.5 shrink-0 text-on-error-container" />
+                  <p className="leading-relaxed text-on-error-container">{w.text}</p>
+                </li>
               ))}
-          </>
+            </ul>
+          ) : (
+            <p className="text-on-surface-variant">אין אזהרות מיוחדות לעיר זו.</p>
+          )
+        ) : (
+          <ul className="flex flex-col gap-3">
+            {current?.items.map((place) => (
+              <PlaceCard
+                key={place.id}
+                place={place}
+                // Only worth a badge when the list actually mixes categories.
+                // A tab where every item is an attraction does not need every
+                // card labelled "attraction".
+                showCategory={
+                  new Set(current.items.map((p) => p.category)).size > 1
+                }
+              />
+            ))}
+          </ul>
         )}
       </main>
     </div>

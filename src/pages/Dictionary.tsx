@@ -48,9 +48,9 @@ export default function Dictionary() {
         ) : (
           <>
             <ul className="flex flex-col gap-3">
-              {generalPhrases.map((p, i) => (
+              {generalPhrases.map((p) => (
                 <li
-                  key={i}
+                  key={p.id}
                   className="rounded-xl bg-surface p-4 shadow-[0_4px_20px_0_rgba(83,99,77,0.08)]"
                 >
                   <p className="text-lg font-semibold text-on-surface">{p.phrase}</p>
@@ -66,9 +66,9 @@ export default function Dictionary() {
                   <h2 className="text-lg font-semibold text-on-surface">סלנג לפי עיר</h2>
                 </div>
                 <ul className="mt-3 flex flex-col gap-3">
-                  {slangPhrases.map((p, i) => (
+                  {slangPhrases.map((p) => (
                     <li
-                      key={i}
+                      key={p.id}
                       className="rounded-xl border border-outline-variant bg-surface-container-low p-4"
                     >
                       <span className="inline-block rounded-full bg-tertiary-container px-2.5 py-0.5 text-xs font-medium text-on-tertiary-container">
