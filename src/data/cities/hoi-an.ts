@@ -21,7 +21,10 @@ export const hoiAn: CityContent = {
       nameLatin: "Morning Glory",
       description:
         "מהמסעדות המוכרות והאהובות בהוֹיאן, בניהול השפית המקומית מיס וי, המגישה מטבח וייטנאמי מסורתי עם ירקות טריים מהאזור - כולל קאו לאו וספרינג רולס לבנים.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [
+        RESTAURANT_SOURCE,
+        "https://www.tripadvisor.com/Restaurant_Review-g298082-d1487249-Reviews-Morning_Glory_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      ],
     },
     {
       id: "thanh-cao-lau",
@@ -31,7 +34,10 @@ export const hoiAn: CityContent = {
       nameLatin: "Thanh Cao Lầu",
       description:
         "מסעדה מקומית ותיקה שנחשבת לאחת הכתובות האותנטיות ביותר למנת קאו לאו - אטריות עבות ייחודיות להוֹיאן, המבושלות במים מהבארות העתיקות של העיר.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [
+        RESTAURANT_SOURCE,
+        "https://www.tripadvisor.com/Restaurant_Review-g298082-d12913336-Reviews-Cao_Lau_Thanh-Hoi_An_Quang_Nam_Province.html",
+      ],
     },
     {
       id: "cargo-club",
@@ -41,7 +47,10 @@ export const hoiAn: CityContent = {
       nameLatin: "Cargo Club",
       description:
         "בית קפה ומסעדה עם מרפסת פתוחה ונוף לעיר העתיקה ולנהר, מוכר בעיקר בזכות הקינוחים בסגנון צרפתי - אופציה נעימה להפסקת קפה או ארוחת ערב רגועה.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [
+        RESTAURANT_SOURCE,
+        "https://www.tripadvisor.com/Restaurant_Review-g298082-d1122024-Reviews-Cargo_Club_Cafe_Restaurant-Hoi_An_Quang_Nam_Province.html",
+      ],
     },
     {
       id: "japanese-covered-bridge",
@@ -72,6 +81,65 @@ export const hoiAn: CityContent = {
       description:
         "כפר חקלאי קטן מחוץ לעיר העתיקה, שבו ניתן לפגוש חקלאים מקומיים, לטעום ירקות טריים ואפילו להתנסות בעבודה בגינה - הפסקה כפרית ורגועה מהתיירות של המרכז ההיסטורי.",
       sources: [ATTRACTION_SOURCE],
+    },
+    {
+      id: "hoi-an-central-market",
+      cityId: "hoi-an",
+      category: "market",
+      name: "השוק המרכזי של הוֹיאן",
+      nameLatin: "Hoi An Central Market (Cho Hoi An)",
+      description:
+        "שוק צהוב ותיק על גדת נהר הוֹיי, מוקד הקניות והאוכל של העיר עם דוכני בדים, מזכרות ובגדי תפירה לצד אולם מזון עמוס. שווה להגיע מוקדם או בשעות הערב, כשהאולם המרכזי פחות צפוף מתיירים.",
+      sources: ["https://hoiannow.com/hoi-an-central-market/"],
+    },
+    {
+      id: "yaly-couture",
+      cityId: "hoi-an",
+      category: "tailor",
+      name: "יאלי קוצ'ר",
+      nameLatin: "Yaly Couture",
+      description:
+        "בית האופנה בהזמנה אישית המפורסם והמפואר ביותר בהוֹיאן, עם מאות תופרים ועובדים משלו ושירות הכולל בחירת בדים ומספר מדידות התאמה. יקר יחסית לחייטים אחרים בעיר, אך נחשב לרמת הגימור הגבוהה ביותר.",
+      sources: [
+        "https://yalycouture.com/en",
+        "https://www.tripadvisor.com/Attraction_Review-g298082-d555725-Reviews-Yaly_Couture-Hoi_An_Quang_Nam_Province.html",
+      ],
+    },
+    {
+      id: "a-dong-silk",
+      cityId: "hoi-an",
+      category: "tailor",
+      name: "איי דונג סילק",
+      nameLatin: "A Dong Silk",
+      description:
+        "חנות תפירה ותיקה שפועלת מאז 1997, ידועה בתהליך מדידה מהיר של כעשר דקות ובזמן השלמה קצר של יומיים בממוצע. מתמחים בבגדי משי בהזמנה אישית, ונחשבים לאחת החנויות הגדולות והמקצועיות בעיר.",
+      sources: [
+        "https://hoiannow.com/a-dong-silk/",
+        "https://www.tripadvisor.com/ShowUserReviews-g298082-d1194254-r1041767029-A_Dong_Silk_Tailors-Hoi_An_Quang_Nam_Province.html",
+      ],
+    },
+    {
+      id: "cam-thanh-basket-boat",
+      cityId: "hoi-an",
+      category: "special",
+      name: "שיט בסירת הסל של קאם טהאן",
+      nameLatin: "Cam Thanh Basket Boat Ride",
+      description:
+        "שיט קצר בסירות סל עגולות מסורתיות ביער הקוקוסים של הכפר קאם טהאן, כרבע שעה נסיעה מהעיר העתיקה. אנשי הכפר חותרים ומסובבים את הסירה בתנועת מחול, ולעיתים נותנים לתייר לנסות לחתור בעצמו.",
+      sources: [
+        "https://www.tripadvisor.com/AttractionProductReview-g298082-d25147092-Hoi_An_Coconut_Basket_Boat_Ride_and_Fishing_Experience-Hoi_An_Quang_Nam_Province.html",
+        "https://hotelroyalhoian.vn/cam-thanh-coconut-village/",
+      ],
+    },
+    {
+      id: "an-bang-beach",
+      cityId: "hoi-an",
+      category: "scenic",
+      name: "חוף אן באנג",
+      nameLatin: "An Bang Beach",
+      description:
+        "חוף חול זהוב ושקט יחסית, כארבעה קילומטרים בלבד מהעיר העתיקה של הוֹיאן, עם מסעדות דגים משפחתיות על החול. נכלל בעבר ברשימת חופי האסיה היפים של טריפ אדוויזר, ונעים במיוחד לשעות שקיעה.",
+      sources: ["https://centralvietnamguide.com/an-bang-beach-hoi-an/"],
     },
   ],
   warnings: [

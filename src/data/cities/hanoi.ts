@@ -22,7 +22,10 @@ export const hanoi: CityContent = {
       nameLatin: "Chả Cá Thăng Long",
       description:
         "מסעדה איקונית ברובע העתיק שפועלת כבר יותר מ-30 שנה, ומתמחה במנה אחת בלבד - צ'ה קה, דג צלוי על גחלים המוגש עם שמיר, בוטנים ואטריות.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [
+        RESTAURANT_SOURCE,
+        "https://guide.michelin.com/sg/en/ha-noi/ha-noi_2974158/restaurant/cha-ca-thang-long",
+      ],
     },
     {
       id: "bun-cha-ta",
@@ -32,7 +35,10 @@ export const hanoi: CityContent = {
       nameLatin: "Bún Chả Ta",
       description:
         "אחת הכתובות המוכרות ביותר לבון צ'ה - פרוסות בשר חזיר צלויות על גחלים, מוגשות עם אטריות אורז קרות, ירק טרי ורוטב מתוק-חמצמץ. מנה שאובמה אכל בהאנוי והפכה מפורסמת עוד יותר.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [
+        RESTAURANT_SOURCE,
+        "https://guide.michelin.com/us/en/ha-noi/ha-noi_2974158/restaurant/bun-cha-ta-nguyen-huu-huan-street",
+      ],
     },
     {
       id: "giang-cafe",
@@ -42,7 +48,7 @@ export const hanoi: CityContent = {
       nameLatin: "Giang Café",
       description:
         "בית הקפה שבו הומצא \"קפה הביצה\" המפורסם - קפה חם עם קצף חלמון ביצה מתוק וקרמי. עצירת חובה לקינוח או הפסקה קטנה תוך כדי סיור ברובע העתיק.",
-      sources: [RESTAURANT_SOURCE],
+      sources: [RESTAURANT_SOURCE, "https://asiamystika.com/blog/cafe-giang"],
     },
     {
       id: "hoan-kiem-lake",
@@ -73,6 +79,55 @@ export const hanoi: CityContent = {
       description:
         "אחד המקומות המיוחדים בהאנוי - מסילת רכבת שעוברת ממש בין קירות הבתים ובתי הקפה. אפשר לשבת בקפה צמוד למסילה ולראות את הרכבת חולפת במרחק של מטרים ספורים.",
       sources: [ATTRACTION_SOURCE],
+    },
+    {
+      id: "dong-xuan-market",
+      cityId: "hanoi",
+      category: "market",
+      name: "שוק דונג סואן",
+      nameLatin: "Dong Xuan Market",
+      description:
+        "השוק המקורה הגדול ביותר בהאנוי, שהוקם בשלהי המאה ה-19 ופרוס על שלושה קומות של בגדים, בדים, אלקטרוניקה ומזכרות. בסופי שבוע נפתח לצדו גם שוק לילה ברחובות הסמוכים, עם מאות דוכנים ומופעי זמר עממי.",
+      sources: [
+        "https://www.bestpricetravel.com/travel-guide/dong-xuan-market.html",
+        "https://www.tripadvisor.com/Attraction_Review-g293924-d311057-Reviews-Dong_Xuan_Market-Hanoi.html",
+      ],
+    },
+    {
+      id: "chuong-tailor",
+      cityId: "hanoi",
+      category: "tailor",
+      name: "צ'אונג טיילור",
+      nameLatin: "Chuong Tailor",
+      description:
+        "בית חייטות ותיק שנוסד ב-1968, שמייסדו הוכרז כ\"אמן תפירה\" מטעם מועצת המדינה הווייטנאמית. מתמחים בחליפות בהזמנה אישית עם מדידה מלאה, וזמן ההשלמה הרגיל הוא כשלושה עד ארבעה ימים.",
+      sources: [
+        "https://www.bestpricetravel.com/travel-guide/tailor-in-hanoi-4022.html",
+        "https://www.tripadvisor.com/Attraction_Review-g293924-d10962096-Reviews-Chuong_Tailor-Hanoi.html",
+      ],
+    },
+    {
+      id: "cong-caphe",
+      cityId: "hanoi",
+      category: "special",
+      name: "קונג קפה",
+      nameLatin: "Cộng Cà Phê",
+      description:
+        "רשת בתי קפה וייטנאמית שנוסדה ב-2007 בהאנוי בהשראה נוסטלגית לתקופת הקיצוב הסוציאליסטית, עם עיצוב ירוק-זית ומדים צבאיים לצוות. מוכרת בעיקר בזכות קפה הקוקוס הקר שהומצא בה, וכיום מונה למעלה מ-100 סניפים בשלוש יבשות.",
+      sources: [
+        "https://en.wikipedia.org/wiki/C%E1%BB%99ng_C%C3%A0_Ph%C3%AA",
+        "https://wander-lush.org/best-cafes-in-hanoi-vietnam-cong/",
+      ],
+    },
+    {
+      id: "ho-tay-lake",
+      cityId: "hanoi",
+      category: "scenic",
+      name: "אגם הו טיי",
+      nameLatin: "Ho Tay (West Lake)",
+      description:
+        "האגם הגדול ביותר בהאנוי, ולחופיו יושבת פאגודת טרן קווק העתיקה - המקדש הבודהיסטי הוותיק בעיר. שעת השקיעה על שדרת טהאן נין נחשבת לזמן הכי יפה לבקר, הרחק מההמולה של המרכז ההיסטורי.",
+      sources: ["https://www.excursionmania.com/ttd/3603/west-lake-tay-ho-district-blg-3603"],
     },
   ],
   warnings: [
