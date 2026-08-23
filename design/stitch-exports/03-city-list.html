@@ -1,0 +1,213 @@
+<!-- בחירת עיר - עיצוב אחיד וממוקד -->
+<!DOCTYPE html><html dir="rtl" lang="he"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>מדריך טיולים - בחירת עיר</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6", "surface": "#faf9f4", "tertiary-container": "#ed8065",
+                        "primary-fixed": "#c8ebca", "on-primary-container": "#1f3c25", "surface-container": "#efeee9",
+                        "on-tertiary-fixed-variant": "#7e2c17", "surface-dim": "#dbdad5", "primary-container": "#86a789",
+                        "background": "#faf9f4", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#3c4b37",
+                        "outline-variant": "#c2c8bf", "surface-tint": "#47664b", "on-surface": "#1b1c19",
+                        "inverse-surface": "#30312e", "secondary-fixed": "#d7e8cd", "primary-fixed-dim": "#adcfaf",
+                        "on-error": "#ffffff", "on-secondary-fixed": "#121f0e", "on-surface-variant": "#424842",
+                        "on-secondary": "#ffffff", "on-primary-fixed": "#03210c", "secondary-container": "#d4e5ca",
+                        "primary": "#47664b", "secondary-fixed-dim": "#bbccb1", "tertiary": "#9d422c",
+                        "tertiary-fixed": "#ffdad2", "inverse-primary": "#adcfaf", "surface-container-high": "#e9e8e3",
+                        "surface-container-low": "#f5f4ef", "surface-container-highest": "#e3e3de", "outline": "#737971",
+                        "surface-bright": "#faf9f4", "on-background": "#1b1c19", "on-tertiary-fixed": "#3c0700",
+                        "secondary": "#53634d", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb4a2",
+                        "inverse-on-surface": "#f2f1ec", "error": "#ba1a1a", "on-tertiary-container": "#661b08",
+                        "on-secondary-container": "#586751", "surface-variant": "#e3e3de", "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#304d35", "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": {
+                        "gutter": "16px", "unit": "8px", "stack-sm": "8px", "stack-md": "16px",
+                        "container-margin-desktop": "48px", "stack-lg": "32px", "section-gap": "64px", "container-margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "headline-md": ["Be Vietnam Pro"],
+                        "label-sm": ["Be Vietnam Pro"], "headline-lg": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .shadow-level-1 { box-shadow: 0 8px 20px -4px rgba(115, 121, 113, 0.08); }
+        .active-sink:active { box-shadow: 0 2px 8px -2px rgba(115, 121, 113, 0.08); transform: translateY(2px); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background w-full h-full">
+<div class="fixed top-0 left-0 right-0 z-40 bg-background pt-safe pb-4 shadow-sm border-b border-surface-variant">
+<header class="w-full">
+<div class="flex items-center justify-between px-container-margin-mobile md:px-container-margin-desktop py-stack-md max-w-7xl mx-auto">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed-dim md:font-headline-lg md:text-headline-lg">
+                    מדריך טיולים
+                </h1>
+<button class="hover:opacity-80 transition-opacity scale-95 duration-150 p-2 rounded-full hover:bg-surface-variant flex items-center justify-center text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 0;">arrow_forward</span>
+</button>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<section class="mb-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">
+                        לאן תרצו לטוס?
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant hidden md:block">
+                        גלו יעדים מדהימים וחוויות בלתי נשכחות בדרום מזרח אסיה.
+                    </p>
+</section>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface border border-outline-variant focus:border-tertiary-container focus:border-2 focus:ring-0 rounded-full py-3 pr-12 pl-4 font-body-md text-body-md text-on-surface transition-all placeholder:text-outline" placeholder="חיפוש יעד..." type="text">
+</div><div class="flex p-1 bg-surface-container-high rounded-full mt-4 gap-1">
+    <button class="flex-1 py-2 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm">
+        וייטנאם
+    </button>
+    <button class="flex-1 py-2 px-4 rounded-full text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all">
+        תאילנד
+    </button>
+</div>
+</div>
+</div>
+<main class="w-full h-full overflow-y-auto pt-[280px] pb-24 md:pt-[300px]">
+<div class="max-w-7xl mx-auto px-container-margin-mobile md:px-container-margin-desktop md:grid md:grid-cols-12 md:gap-gutter">
+<section class="md:col-span-12 mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative flex flex-col justify-end h-40">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDi84eiW6ObaBFf-GLr1WwOlp348SaXqHWgX4Ql6w7o4zToayBUaE-7L12B4FMyHfnXFFc7VvLhfmL7t0I0qmxJMOyr-eo_gxFaxuJmrtq-8rnil_q1UlpOJQRs72ozRMXvAvGNoVBAtoSd-yePUZ7qa57z0O3o-5Bo0t473jot8BqwutJ8uhmh2UBp4pO2x7pnPCjqzS0J12_vdtpbcE9C4LCF7rIyxOh8bXyyRq5jKlRihT1ZmpAGfg&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-6 z-10 text-on-primary">
+<div class="flex gap-2 mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">עיר בירה</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">תרבות</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">האנוי</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-2">שילוב מרתק של היסטוריה עתיקה, אדריכלות צרפתית ותרבות רחוב תוססת.</p>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative flex flex-col justify-end h-40">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA8Ic6c9v8fLvZizGJ3YVnmZHEw-7w0I60gTbuOfVOYeXrIkOnKDN8wh8zrYKt6XPwAyPGPXIWUG_sa3KLgAjNFXWg6sdh814kCpL4Zcn66SMt9PjN5OHqnGZGJY7A3CialyuM6zYRuq92yWxecXwAZ-nWE7na1llCCkqqPuptc81m1hjfGAgnZ0GzL6_ezptq82KZhVrt12k5IDbeTsqjKX28zrEv9feRDs6vJZIY1AHjOnSO6pfiX2g&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-6 z-10 text-on-primary">
+<div class="flex gap-2 mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">טבע</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">האלונג ביי</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">פלא טבע עוצר נשימה.</p>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAQH2gKmE1YdYy9e3UB-KmQ0cOMlfTG_iK4AyWQAMhHufN8ITfz4DxCo0IfHkJ1oQj-aWs4lcBvM4OXJigvYfvQVy6NW9yYomk7FJ_9Xz1ap_yA0IT99f9BIgIGc6yrXO_BQ1yCSZotcz10tygQHbTts1xcB9Sjm-IXUCViq_hQTIChqpATAa8cs3kFgxfHe0rkmtgtr8mur2qYHoVJCxUoaL-EdVuM9cGpAxerxT0AkqXgTX-OYjWWWw&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">סאפה</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">טרקים ונופים ירוקים.</p>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCHaCr2b5ZZV6UrW584Oyt5LNJWokT_MM_G0FiXzTWu60IE01BxHvdrzUI2R-ZeKAQGr3_dNehsdEcsg95n-lBc9NIRZSintsAknwg2CBE06lg00l8f8Yh8DxQ4FIgKCx2d9kbmYG9tURz3mcS2h6ONBSIIVdE3IdfZIiDsDJzE3m2Xx0wN9I359U2RUL2qPN34m1RTpMvtvEtYel5WUVAZYN3kGktpoNTXxTiGfgoRvIPfBvHdg7jkIg&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">הוי אן</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">עיר העששיות הקסומה.</p>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDZcdR57OiXGkW-lC_uKNTHHVOhDwRz6wqs8skb6gPtTlgKPk4_8YEhczcSKS29u5oj12uTMct-DItQMra8Xb6EETb7s-qTPSKwdJIpHxMf6Jtb1aMZkLT7-WjB9At1vzCOyrSqdDxIIUztsORj7BFdhqss01NJIoj9A7RNlLKA3C6T8clH-feVgkNGFraNEEdWFSwtxaShJ0V-DLcRghIq-r8Jhpg-uEpY9thiA66EuaqHt8lmEodJ0w&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">דה נאנג</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">חופים מודרניים.</p>
+</div>
+</div>
+<div class="group bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuB9gYjWPMtDUrQv14-7Jm3bfl5JS5fFbMDhpChy0qxWDFjsnBnMA-yDKR1Ui0DDzeVNSSHzXFCabGNviqy9BuGJRvMALO-vVb15cjBp5B4k38FX1Aq_tXdSE0fmB7jTrqQD5mW1oMTdx1avu19BnsBOvVeXkWDyuAaNZNUdMVciLBP4sCNxvLjMAf6GhJY2MQ3EuS3AJp6RGMxk_xJjJY4zXoQgrfJv_bQbnfa4o8C-62og-rsMJ7TKyg&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">הו צ'י מין סיטי</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">מטרופולין שוקק חיים.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-12 mb-section-gap hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group min-w-[240px] md:min-w-0 bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end flex-shrink-0 md:col-span-1">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCM9-td6FQsK7YmR84vr4BKuGXPSNcT8s70eIFuvaJCpN4aRhKPcDFN74F5HVJqFBvBleheUVWJwUB0Brc2iX3JH2YAVozuHrMmu27dgvHi-Kt4xSzbqCK9KAakx4iC-pTJoHMX49I5KeS1rRhPlZoSYEDSAj_SATiM7nb9V3AcjhYuz-o8fbjQ4L1bviKCjf_Kc18A-ZdSEn3WPfx6kStgdJs-thjs8XTfaz0rDDvNt2KyqjCeZWG6KA&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">בנגקוק</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">בירה תוססת, מקדשים ושווקים.</p>
+</div>
+</div>
+<div class="group min-w-[240px] md:min-w-0 bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end flex-shrink-0 md:col-span-1">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDBbmW5W7JZZy5OmYgKw3NsZDMgFWMM9bnQP_1I3aL50Vq9EL29is-qk0y4c0vRFWx_e2fjNrV-oopV7vjjkhXT-tF4yQvUGUqgBCmMUP30vNDk6vBU_XgFF8bwt0hYJuXqDe_g2yq1rH-IKlMqoQZkMDHlMdBh1pDT3TUUaT9NC6W1KWM9NFmygUxbk-auylxwZ7h9EyUNCSx9Njf15G8U1rBl6vOYLiQNSIlFan5xMhAkf9GQn1Z3QA&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">צ'יאנג מאי</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">הרים, מקדשים וטבע שליו.</p>
+</div>
+</div>
+<div class="group min-w-[240px] md:min-w-0 bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end flex-shrink-0 md:col-span-1">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD0Ikpfa3IV49B54WBHSSquOvmwqr48_Izdz7GQVQzPb7Piw-VMfdbW0o7H4OQkN2V39pZnoEdfkcPExO9buBBOHno3rJ9WFYhja48hlWmyxP3LkJGzn5c2Z6yGAZU3DzVu01ZfEWnkrjwlWUoM7XFbcaQJvnCZ6yDTpn0pREoZvT5AJOx7Klx5xREznKfGKNIMz2W43L45wt09VQZ3VxnfPoslrknAew56EQwy9UkHkFEYhAZxr7mtIw&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">קוסמוי / קופנגן</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">איים טרופיים קלאסיים.</p>
+</div>
+</div>
+<div class="group min-w-[240px] md:min-w-0 bg-surface rounded-xl overflow-hidden shadow-level-1 active-sink transition-all cursor-pointer relative h-40 flex flex-col justify-end flex-shrink-0 md:col-span-1">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA1FGptxY3PFsOfTE3CUcIUpG_s18hk5tjtG1T-eKBTrtsJF2HrxwY7-odJYUeBDwKTq_8tDuvcwliqJZySVhCmWh--TXyFnV7vSFrZBf13NhH1enLTzft_NCxhtqnRflH8mAX1VUwOymGS3a1ueEGZz9fj8QRYb34ZQK5S0sbhhJ37uptzdMkvue_KHXkqhVLdTklJJwcbxYnK6G0XXEOwjJSHhP4v880VWlv9Bm_TTHm6Pa4uYfINKw&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="relative p-4 z-10 text-on-primary">
+<h4 class="font-headline-md text-headline-md mb-1">פוקט</h4>
+<p class="font-body-md text-body-md opacity-90 line-clamp-1">חופים, אטרקציות וריזורטים.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-low dark:bg-surface-container-low shadow-sm md:hidden border-t border-surface-variant">
+<div class="flex justify-around items-center h-16 px-container-margin-mobile w-full">
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container dark:bg-primary-container rounded-full px-4 py-1 hover:bg-surface-variant dark:hover:bg-surface-variant scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">explore</span>
+<span class="font-label-sm text-label-sm mt-1">ערים</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:bg-surface-variant dark:hover:bg-surface-variant scale-90 transition-transform px-4 py-1 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 0;">translate</span>
+<span class="font-label-sm text-label-sm mt-1">שיחון</span>
+</button>
+</div>
+</nav>
+</body></html>
