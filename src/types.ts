@@ -72,6 +72,11 @@ export interface Place {
   coords?: { lat: number; lng: number };
   image?: string;
   /**
+   * A real public page about this place - official site, TripAdvisor, a public
+   * Facebook page. Optional: omit rather than invent one. PRD.md section 3.11.
+   */
+  infoUrl?: string;
+  /**
    * At least one URL backing this entry. Required by the type on purpose:
    * a fabricated entry that cites nothing cannot compile.
    * See PRD.md section 15 and docs/CONTENT-GUIDE.md.
