@@ -1,46 +1,53 @@
-export type PhraseLanguage = "vietnamese" | "thai";
+import type { Phrase } from "../types";
+import { cityPhrases } from "./cities/index";
 
-export interface Phrase {
-  language: PhraseLanguage;
-  phrase: string;
-  meaning: string;
-  cityId?: string;
-}
+export type { Phrase, PhraseLanguage } from "../types";
 
-export const phrases: Phrase[] = [
+/** Phrases that are not tied to any single city. City slang lives in the city content files. */
+export const generalPhrases: Phrase[] = [
   // וייטנאמית - ביטויים בסיסיים
-  { language: "vietnamese", phrase: "Xin chào", meaning: "שלום (ברכה מנומסת)" },
-  { language: "vietnamese", phrase: "Cảm ơn", meaning: "תודה" },
-  { language: "vietnamese", phrase: "Không có chi", meaning: "על לא דבר / אין בעד מה" },
-  { language: "vietnamese", phrase: "Xin lỗi", meaning: "סליחה" },
-  { language: "vietnamese", phrase: "Bao nhiêu tiền?", meaning: "כמה זה עולה?" },
-  { language: "vietnamese", phrase: "Đắt quá!", meaning: "יקר מדי! (למיקוח על מחיר)" },
-  { language: "vietnamese", phrase: "Không!", meaning: "לא! (סירוב נחרץ, למשל למוכר מתעקש)" },
-
-  // וייטנאמית - סלנג/ניב מקומי לפי עיר (הבדלי צפון-דרום אמיתיים)
-  { language: "vietnamese", phrase: "lợn", meaning: "חזיר", cityId: "hanoi" },
-  { language: "vietnamese", phrase: "heo", meaning: "חזיר", cityId: "hoi-an" },
-  { language: "vietnamese", phrase: "bát", meaning: "קערה", cityId: "hanoi" },
-  { language: "vietnamese", phrase: "tô / chén", meaning: "קערה", cityId: "hoi-an" },
-  { language: "vietnamese", phrase: "mũ", meaning: "כובע", cityId: "hanoi" },
-  { language: "vietnamese", phrase: "nón", meaning: "כובע", cityId: "hoi-an" },
+  { id: "vi-hello", language: "vietnamese", phrase: "Xin chào", meaning: "שלום (ברכה מנומסת)" },
+  { id: "vi-thanks", language: "vietnamese", phrase: "Cảm ơn", meaning: "תודה" },
+  {
+    id: "vi-youre-welcome",
+    language: "vietnamese",
+    phrase: "Không có chi",
+    meaning: "על לא דבר / אין בעד מה",
+  },
+  { id: "vi-sorry", language: "vietnamese", phrase: "Xin lỗi", meaning: "סליחה" },
+  { id: "vi-how-much", language: "vietnamese", phrase: "Bao nhiêu tiền?", meaning: "כמה זה עולה?" },
+  {
+    id: "vi-too-expensive",
+    language: "vietnamese",
+    phrase: "Đắt quá!",
+    meaning: "יקר מדי! (למיקוח על מחיר)",
+  },
+  {
+    id: "vi-no",
+    language: "vietnamese",
+    phrase: "Không!",
+    meaning: "לא! (סירוב נחרץ, למשל למוכר מתעקש)",
+  },
 
   // תאית - ביטויים בסיסיים
-  { language: "thai", phrase: "Sawasdee (kha / khrap)", meaning: "שלום" },
-  { language: "thai", phrase: "Khop khun (kha / khrap)", meaning: "תודה" },
-  { language: "thai", phrase: "Tao rai (kha / khrap)?", meaning: "כמה זה עולה?" },
-  { language: "thai", phrase: "Lod dai mai (kha / khrap)?", meaning: "אפשר לקבל הנחה?" },
-  { language: "thai", phrase: "Paeng bpai", meaning: "יקר מדי" },
+  { id: "th-hello", language: "thai", phrase: "Sawasdee (kha / khrap)", meaning: "שלום" },
+  { id: "th-thanks", language: "thai", phrase: "Khop khun (kha / khrap)", meaning: "תודה" },
+  { id: "th-how-much", language: "thai", phrase: "Tao rai (kha / khrap)?", meaning: "כמה זה עולה?" },
   {
+    id: "th-discount",
+    language: "thai",
+    phrase: "Lod dai mai (kha / khrap)?",
+    meaning: "אפשר לקבל הנחה?",
+  },
+  { id: "th-too-expensive", language: "thai", phrase: "Paeng bpai", meaning: "יקר מדי" },
+  {
+    id: "th-polite-particle",
     language: "thai",
     phrase: "kha / khrap",
     meaning:
       "מילית נימוס שמוסיפים בסוף משפט - נשים אומרות \"קה\", גברים אומרים \"קראפ\". אין לה משמעות בפני עצמה, רק הופכת את המשפט למנומס יותר.",
   },
-
-  // תאית - ניב דרומי לפי עיר (הבדלים מתועדים מול תאית סטנדרטית)
-  { language: "thai", phrase: "อร่อย (a-roi)", meaning: "טעים", cityId: "bangkok" },
-  { language: "thai", phrase: "หรอย (roi)", meaning: "טעים", cityId: "koh-samui-koh-phangan" },
-  { language: "thai", phrase: "พูด (phuut)", meaning: "לדבר", cityId: "bangkok" },
-  { language: "thai", phrase: "แหลง (laeng)", meaning: "לדבר", cityId: "koh-samui-koh-phangan" },
 ];
+
+/** General phrases plus every city-specific slang phrase. */
+export const phrases: Phrase[] = [...generalPhrases, ...cityPhrases];
