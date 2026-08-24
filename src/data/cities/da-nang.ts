@@ -146,7 +146,7 @@ export const daNang: CityContent = {
         "שוק לילה קטן וידידותי לתיירים במרחק כ-200 מטר מחוף מי קה, פתוח מדי ערב בין השעות 18:00-23:00. דוכני אוכל רחוב, בגדים ומזכרות באווירה נינוחה יותר משוק האן - אפשרות טובה לארוחת ערב אחרי יום בים.",
       sources: [
         "https://vinwonders.com/en/wonderpedia/news/an-thuong-night-market-da-nang/",
-        "https://danangfantasticity.com/en/night-market/a-glimpse-of-5-most-famous-night-markets-in-danang",
+        "https://traveldanang.org/place/an-thuong-night-market/",
       ],
     },
     {

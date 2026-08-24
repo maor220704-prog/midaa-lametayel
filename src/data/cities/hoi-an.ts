@@ -139,7 +139,10 @@ export const hoiAn: CityContent = {
       nameLatin: "An Bang Beach",
       description:
         "חוף חול זהוב ושקט יחסית, כארבעה קילומטרים בלבד מהעיר העתיקה של הוֹיאן, עם מסעדות דגים משפחתיות על החול. נכלל בעבר ברשימת חופי האסיה היפים של טריפ אדוויזר, ונעים במיוחד לשעות שקיעה.",
-      sources: ["https://centralvietnamguide.com/an-bang-beach-hoi-an/"],
+      sources: [
+        "https://centralvietnamguide.com/an-bang-beach-hoi-an/",
+        "https://vietnamdiscovery.com/hoi-an/attractions/an-bang-beach/",
+      ],
     },
   ],
   warnings: [

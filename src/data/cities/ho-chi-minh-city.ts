@@ -39,13 +39,14 @@ export const hoChiMinhCity: CityContent = {
       id: "banh-xeo-46a",
       cityId: "ho-chi-minh-city",
       category: "restaurant",
-      name: "באן שאו 46A",
+      name: "באן שאו 46 איי",
       nameLatin: "Bánh Xèo 46A",
       description:
         "פועלת מ-1945 בסמטה שקטה, וזוכה להכרה כתפריט מומלץ במדריך מישלן. מתמחה בבאן שאו - חביתת אורז וכורכום פריכה במילוי חזיר ושרימפס, המטוגנת עדיין על גחלים ומוגשת עם ירק טרי לעטיפה.",
       sources: [
         "https://migrationology.com/banh-xeo-46a-saigon/",
         "https://www.tripadvisor.com/Restaurant_Review-g293925-d1122087-Reviews-Banh_Xeo_46A-Ho_Chi_Minh_City.html",
+        "https://affordabletravel.substack.com/p/banh-xeo-46a-ho-chi-minh-city-vietnam",
       ],
     },
     {
@@ -81,10 +82,10 @@ export const hoChiMinhCity: CityContent = {
       name: "מוזיאון שרידי המלחמה",
       nameLatin: "War Remnants Museum",
       description:
-        "מוזיאון שנפתח ב-1975 ושונה שמו ב-1993, המציג כלי נשק, תצלומים ועדויות ממלחמת וייטנאם מנקודת המבט הווייטנאמית. תערוכה מטלטלת ולא מתאימה לילדים קטנים, אך חוויה משמעותית למי שרוצה להבין את ההיסטוריה של המדינה.",
+        "מוזיאון שנפתח ב-1975 ושונה שמו ב-1995, המציג כלי נשק, תצלומים ועדויות ממלחמת וייטנאם מנקודת המבט הווייטנאמית. תערוכה מטלטלת ולא מתאימה לילדים קטנים, אך חוויה משמעותית למי שרוצה להבין את ההיסטוריה של המדינה.",
       sources: [
         "https://silverlandhotels.com/war-remnants-museum-ho-chi-minh-travel-guide/",
-        "https://www.lonelyplanet.com/vietnam/ho-chi-minh-city/attractions/war-remnants-museum/a/poi-sig/403144/357884",
+        "https://vietnamtravel.com/war-remnants-museum-in-hcm-city/",
       ],
     },
     {
@@ -120,10 +121,11 @@ export const hoChiMinhCity: CityContent = {
       name: "רחוב ההולכים רגל נגוין הואה",
       nameLatin: "Nguyen Hue Walking Street",
       description:
-        "שדרה להולכי רגל באורך 720 מטר, שהייתה במקור תעלה ונפתחה כרחוב הולכי רגל ב-2015. במרכזה מזרקה בצורת לוטוס עם מופעי מים ואור בלילה, ובשעות הערב היא הופכת למרחב מפגש תוסס למשפחות ולבני נוער.",
+        "שדרה להולכי רגל באורך כ-900 מטר, שהייתה במקור תעלה ונפתחה כרחוב הולכי רגל ב-2015. במרכזה מזרקה בצורת לוטוס עם מופעי מים ואור בלילה, ובשעות הערב היא הופכת למרחב מפגש תוסס למשפחות ולבני נוער.",
       sources: [
         "https://www.vietnamairlines.com/us/en/plan-book/travel/travel-guide/nguyen-hue-walking-street",
         "https://www.tripadvisor.com/Attraction_Review-g293925-d8290115-Reviews-Nguyen_Hue_Street-Ho_Chi_Minh_City.html",
+        "https://saigoneer.com/saigon-news/17788-saigon-to-hold-nightly-music,-light-shows-on-nguyen-hue-walking-street",
       ],
     },
     {
