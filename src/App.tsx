@@ -8,7 +8,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ErrorBoundary>
         <Routes>
           <Route path="/" element={<CityList />} />

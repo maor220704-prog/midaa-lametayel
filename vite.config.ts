@@ -25,6 +25,10 @@ function buildStamp() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages serves this repo from /midaa-lametayel/, not the domain
+  // root - every asset URL, the PWA manifest, and the router's basename
+  // all need to agree on this same prefix.
+  base: '/midaa-lametayel/',
   define: {
     __APP_VERSION__: JSON.stringify(buildStamp()),
   },
@@ -42,8 +46,8 @@ export default defineConfig({
         description: 'מדריך טיולים היברידי לוייטנאם ותאילנד — עובד גם בלי אינטרנט',
         lang: 'he',
         dir: 'rtl',
-        start_url: '/',
-        scope: '/',
+        start_url: '/midaa-lametayel/',
+        scope: '/midaa-lametayel/',
         display: 'standalone',
         background_color: '#faf9f4',
         theme_color: '#47664b',
@@ -64,7 +68,7 @@ export default defineConfig({
         // miss must never fall through to a network request that can fail
         // in the field.
         globPatterns: ['**/*.{js,css,html,woff2,png,svg,webp,ico,json,webmanifest}'],
-        navigateFallback: '/index.html',
+        navigateFallback: '/midaa-lametayel/index.html',
       },
     }),
   ],

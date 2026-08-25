@@ -3,6 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      GitHub Pages has no server-side rewrite, so a direct request to e.g.
+      /midaa-lametayel/city/hanoi 404s at the CDN before React Router ever
+      sees it. public/404.html catches that 404 and redirects here with the
+      real path stuffed into a query string; this decodes it back into a
+      normal URL via history.replaceState before React Router reads the
+      location, so a hard refresh or a shared link both land on the right
+      page. (The rafgraph spa-github-pages pattern - has to run before any
+      routing code, hence first thing in <head>.)
+    -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- vite-plugin-pwa injects <link rel="manifest"> automatically at build time. -->
     <meta name="theme-color" content="#47664b" />
