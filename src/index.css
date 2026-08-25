@@ -542,3 +542,30 @@ body {
   padding: 14px 14px 16px;
 }
 
+/* Fires once when any item inside this card gets checked off - a small
+   celebratory "pop" on the whole card, not just the checkbox. Triggered by
+   a transient class from React (removed again on animationend), never by
+   :hover, so it can't get stuck or replay on scroll. */
+.packing-card--pulse {
+  animation: packing-card-pop 0.35s ease;
+}
+@keyframes packing-card-pop {
+  0% {
+    scale: 1;
+    box-shadow: 0 12px 24px -10px rgba(31, 60, 37, 0.25);
+  }
+  40% {
+    scale: 1.02;
+    box-shadow: 0 16px 30px -8px rgba(31, 60, 37, 0.35);
+  }
+  100% {
+    scale: 1;
+    box-shadow: 0 12px 24px -10px rgba(31, 60, 37, 0.25);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .packing-card--pulse {
+    animation: none;
+  }
+}
+

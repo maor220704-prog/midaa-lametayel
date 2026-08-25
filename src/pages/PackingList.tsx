@@ -51,21 +51,33 @@ function ItemRow({ item, checked, onToggle }: ItemRowProps) {
   );
 }
 
+/** Which card (the base list, or a given city) an item id belongs to - used
+ * to know which card should pop when that item gets checked. */
+function sectionOf(id: string): string {
+  if (baseItems.some((i) => i.id === id)) return "base";
+  return cityPackingSections.find((s) => s.items.some((i) => i.id === id))?.cityId ?? "";
+}
+
 export default function PackingList() {
   const [checked, setChecked] = useState<Set<string>>(loadChecked);
+  const [pulsingSection, setPulsingSection] = useState<string | null>(null);
 
   const toggle = (id: string) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
+      const willCheck = !next.has(id);
+      if (willCheck) {
         next.add(id);
+        setPulsingSection(sectionOf(id));
+      } else {
+        next.delete(id);
       }
       saveChecked(next);
       return next;
     });
   };
+
+  const clearPulse = (section: string) => setPulsingSection((current) => (current === section ? null : current));
 
   const cityName = (cityId: string) => cities.find((c) => c.id === cityId)?.name ?? cityId;
 
@@ -79,9 +91,12 @@ export default function PackingList() {
       <main className="px-4 py-5">
         <section>
           <h2 className="mb-2 text-base font-bold text-on-surface">בסיס לכל הטיול</h2>
-          <div className="packing-card">
+          <div
+            className={`packing-card ${pulsingSection === "base" ? "packing-card--pulse" : ""}`}
+            onAnimationEnd={() => clearPulse("base")}
+          >
             <div className="packing-card__content">
-              <div className="rounded-2xl bg-surface-container px-4 py-1">
+              <div className="rounded-2xl bg-secondary-container px-4 py-1">
                 {baseItems.map((item) => (
                   <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
                 ))}
@@ -94,7 +109,11 @@ export default function PackingList() {
           <h2 className="mb-3 text-base font-bold text-on-surface">לפי המסלול</h2>
           <div className="flex flex-col gap-5">
             {cityPackingSections.map((section) => (
-              <div key={section.cityId} className="packing-card">
+              <div
+                key={section.cityId}
+                className={`packing-card ${pulsingSection === section.cityId ? "packing-card--pulse" : ""}`}
+                onAnimationEnd={() => clearPulse(section.cityId)}
+              >
                 <div className="packing-card__content">
                   <div className="flex items-baseline justify-between px-0.5 pb-1.5">
                     <span className="text-[15px] font-bold text-on-surface">{cityName(section.cityId)}</span>
@@ -111,7 +130,7 @@ export default function PackingList() {
                     </div>
                   )}
 
-                  <div className="rounded-2xl bg-surface-container px-4 py-1">
+                  <div className="rounded-2xl bg-secondary-container px-4 py-1">
                     {section.items.map((item) => (
                       <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
                     ))}
