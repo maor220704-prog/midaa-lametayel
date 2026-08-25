@@ -12,7 +12,18 @@ export default function NavBar() {
   if (location.pathname.startsWith("/city/")) return null;
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-outline-variant bg-surface-container-low">
+    <nav
+      className="fixed inset-x-0 bottom-0 z-20 border-t border-outline-variant bg-surface-container-low"
+      style={{
+        // iOS Safari sometimes "detaches" a fixed element during momentum
+        // scroll, letting it drift with the content instead of staying
+        // pinned to the viewport - promoting it to its own GPU compositing
+        // layer is the standard fix (reported by a real user on an iPhone).
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+        WebkitBackfaceVisibility: "hidden",
+      }}
+    >
       <span
         className="pointer-events-none absolute bottom-0.5 left-1.5 text-[9px] leading-none text-on-surface-variant/40"
         dir="ltr"
