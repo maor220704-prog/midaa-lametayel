@@ -79,10 +79,14 @@ export default function PackingList() {
       <main className="px-4 py-5">
         <section>
           <h2 className="mb-2 text-base font-bold text-on-surface">בסיס לכל הטיול</h2>
-          <div className="rounded-2xl bg-surface-container px-4 py-1">
-            {baseItems.map((item) => (
-              <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
-            ))}
+          <div className="packing-card">
+            <div className="packing-card__content">
+              <div className="rounded-2xl bg-surface-container px-4 py-1">
+                {baseItems.map((item) => (
+                  <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
