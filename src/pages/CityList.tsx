@@ -14,7 +14,7 @@ export default function CityList() {
 
   return (
     <div className="min-h-screen bg-background pb-24">
-      <header className="sticky top-0 z-10 border-b border-outline-variant bg-background/95 px-4 pb-4 pt-6 backdrop-blur">
+      <header className="header-elevated sticky top-0 z-10 bg-background px-4 pb-4 pt-6">
         <h1 className="text-2xl font-bold text-primary">מידע למטייל</h1>
         <p className="mt-1 text-base text-on-surface-variant">לאן תרצו לטוס?</p>
 

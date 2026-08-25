@@ -79,7 +79,7 @@ export default function CityPage() {
     <div className="min-h-screen bg-background">
       <CityHeroCarousel city={city} places={places} />
 
-      <header className="sticky top-0 z-10 bg-primary px-4 pb-3 pt-6 text-on-primary shadow-sm">
+      <header className="header-elevated sticky top-0 z-10 bg-primary px-4 pb-3 pt-6 text-on-primary">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <Link

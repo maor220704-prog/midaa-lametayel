@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-20 border-t border-outline-variant bg-surface-container-low"
+      className="nav-glass fixed inset-x-0 bottom-0 z-20"
       style={{
         // iOS Safari sometimes "detaches" a fixed element during momentum
         // scroll, letting it drift with the content instead of staying

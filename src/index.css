@@ -210,6 +210,76 @@ body {
 }
 
 /*
+ * "Warm parchment" translucent glass (design.md, note dated 25/08/2026).
+ * Reserved for chrome that sits over a background THIS APP controls (its own
+ * cream-to-sage body gradient, or an opaque header/nav fill) - never over an
+ * arbitrary photo. The bottom nav qualifies: every page that renders it
+ * reserves bottom padding past its last photo (CityList's `pb-24`,
+ * Dictionary's `pb-24`), so only the plain body background can ever sit
+ * behind it, never a scrolled photo.
+ *
+ * `@supports` gates the translucent/blurred look behind a solid fallback
+ * fill, so a browser without backdrop-filter still gets a fully opaque,
+ * legible nav instead of a half-transparent one.
+ */
+.nav-glass {
+  position: relative;
+  background: var(--color-surface-container-low);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .nav-glass {
+    background: color-mix(in srgb, var(--color-surface-container-low) 78%, transparent);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+  }
+}
+.nav-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-tertiary-container),
+    var(--color-primary-container),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+/*
+ * Opaque "elevated header" treatment (design.md, note dated 25/08/2026) -
+ * the counterpart to .nav-glass above. These two sticky headers
+ * (CityList.tsx, CityPage.tsx) have photo content scrolling underneath
+ * them, so per the same rule they stay fully opaque and get their sense of
+ * depth from a drop shadow and a thin warm gradient hairline instead of any
+ * blur or transparency.
+ */
+.header-elevated {
+  position: relative;
+  box-shadow: 0 10px 22px -14px rgba(27, 28, 25, 0.35);
+}
+.header-elevated::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-tertiary-container),
+    var(--color-primary-container),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+/*
  * Active-state styling for the city-page category tabs (CityPage.tsx). A
  * recolor of a UIverse.io "radio-inputs" component (00Kubi) from its
  * default blue to this app's green tokens: a light gradient fill (instead
