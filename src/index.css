@@ -223,7 +223,13 @@ body {
  * legible nav instead of a half-transparent one.
  */
 .nav-glass {
-  position: relative;
+  /* No position here - the <nav> already has Tailwind's `fixed` utility
+     class, which already establishes a containing block for the ::before
+     hairline below. Setting `position: relative` here silently overrode
+     `fixed` (same specificity, this rule comes later in the cascade),
+     turning the bottom nav into a normal in-flow element - a real bug a
+     user found on the live site (nav sat at the bottom of the page
+     content instead of pinned to the viewport). */
   background: var(--color-surface-container-low);
 }
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
