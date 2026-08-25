@@ -38,25 +38,7 @@ function ItemRow({ item, checked, onToggle }: ItemRowProps) {
       aria-pressed={checked}
       className="flex w-full items-start gap-3 border-b border-outline-variant py-2.5 text-right last:border-b-0"
     >
-      <span
-        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors ${
-          checked ? "border-primary bg-primary" : "border-primary-container"
-        }`}
-      >
-        {checked && (
-          <svg
-            viewBox="0 0 24 24"
-            className="h-3.5 w-3.5 text-on-primary"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={3}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 13l4 4L19 7" />
-          </svg>
-        )}
-      </span>
+      <span className={`mt-0.5 shrink-0 packing-check ${checked ? "packing-check--checked" : ""}`} />
       <span
         className={`text-[14.5px] leading-relaxed ${
           checked ? "text-on-surface-variant line-through" : "text-on-surface"
@@ -108,26 +90,28 @@ export default function PackingList() {
           <h2 className="mb-3 text-base font-bold text-on-surface">לפי המסלול</h2>
           <div className="flex flex-col gap-5">
             {cityPackingSections.map((section) => (
-              <div key={section.cityId}>
-                <div className="flex items-baseline justify-between px-0.5 pb-1.5">
-                  <span className="text-[15px] font-bold text-on-surface">{cityName(section.cityId)}</span>
-                  <span className="text-xs text-on-surface-variant">{section.dates}</span>
-                </div>
-                <p className="px-0.5 pb-2 text-sm leading-relaxed text-on-surface-variant">{section.weather}</p>
-
-                {section.highlight && (
-                  <div className="mb-2 flex gap-2 rounded-xl bg-tertiary-container px-3 py-2 text-sm leading-relaxed text-on-tertiary-container">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-on-tertiary-container" />
-                    <span>
-                      <strong className="font-bold">{section.highlight.title}</strong> {section.highlight.text}
-                    </span>
+              <div key={section.cityId} className="packing-card">
+                <div className="packing-card__content">
+                  <div className="flex items-baseline justify-between px-0.5 pb-1.5">
+                    <span className="text-[15px] font-bold text-on-surface">{cityName(section.cityId)}</span>
+                    <span className="text-xs text-on-surface-variant">{section.dates}</span>
                   </div>
-                )}
+                  <p className="px-0.5 pb-2 text-sm leading-relaxed text-on-surface-variant">{section.weather}</p>
 
-                <div className="rounded-2xl bg-surface-container px-4 py-1">
-                  {section.items.map((item) => (
-                    <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
-                  ))}
+                  {section.highlight && (
+                    <div className="mb-2 flex gap-2 rounded-xl bg-tertiary-container px-3 py-2 text-sm leading-relaxed text-on-tertiary-container">
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-on-tertiary-container" />
+                      <span>
+                        <strong className="font-bold">{section.highlight.title}</strong> {section.highlight.text}
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="rounded-2xl bg-surface-container px-4 py-1">
+                    {section.items.map((item) => (
+                      <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
