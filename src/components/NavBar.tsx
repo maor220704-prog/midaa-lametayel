@@ -48,6 +48,21 @@ export default function NavBar() {
           )}
         </NavLink>
         <NavLink
+          to="/packing"
+          className={({ isActive }) =>
+            `flex flex-col items-center justify-center gap-0.5 rounded-full px-4 py-1 transition-colors ${
+              isActive ? "bg-primary-container text-on-primary-container" : "text-on-surface-variant opacity-70"
+            }`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              <Icon name="luggage" filled={isActive} />
+              <span className="text-xs font-medium">ציוד</span>
+            </>
+          )}
+        </NavLink>
+        <NavLink
           to="/dictionary"
           className={({ isActive }) =>
             `flex flex-col items-center justify-center gap-0.5 rounded-full px-4 py-1 transition-colors ${
