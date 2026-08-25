@@ -96,7 +96,7 @@ export default function PackingList() {
             onAnimationEnd={() => clearPulse("base")}
           >
             <div className="packing-card__content">
-              <div className="rounded-2xl bg-secondary-container px-4 py-1">
+              <div className="packing-panel px-4 py-1">
                 {baseItems.map((item) => (
                   <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
                 ))}
@@ -130,7 +130,7 @@ export default function PackingList() {
                     </div>
                   )}
 
-                  <div className="rounded-2xl bg-secondary-container px-4 py-1">
+                  <div className="packing-panel px-4 py-1">
                     {section.items.map((item) => (
                       <ItemRow key={item.id} item={item} checked={checked.has(item.id)} onToggle={toggle} />
                     ))}
