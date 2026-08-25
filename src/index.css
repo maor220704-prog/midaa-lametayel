@@ -265,7 +265,11 @@ body {
  * blur or transparency.
  */
 .header-elevated {
-  position: relative;
+  /* No position here either - same mistake as .nav-glass above. Both
+     CityList.tsx and CityPage.tsx pair this class with Tailwind's
+     `sticky` utility; `position: relative` here silently beat `sticky`
+     the same way it beat `fixed` on the nav, so both top headers stopped
+     sticking too. `sticky` already gives ::after a containing block. */
   box-shadow: 0 10px 22px -14px rgba(27, 28, 25, 0.35);
 }
 .header-elevated::after {
