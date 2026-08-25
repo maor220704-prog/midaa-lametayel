@@ -6,26 +6,15 @@ export type Country = "vietnam" | "thailand";
  * so a typo becomes a build failure instead of an empty tab discovered in Vietnam.
  */
 export const CITY_IDS = [
-  // Vietnam
+  // Vietnam - in itinerary order
   "hanoi",
   "ha-long-bay",
-  "sapa",
-  "ninh-binh",
-  "hoi-an",
-  "da-nang",
-  "hue",
-  "dalat",
-  "mui-ne",
-  "nha-trang",
-  "ho-chi-minh-city",
   "phu-quoc",
+  "ho-chi-minh-city",
+  "da-nang",
+  "hoi-an",
   // Thailand
-  "bangkok",
-  "chiang-mai",
-  "pai",
-  "koh-samui-koh-phangan",
   "phuket",
-  "krabi",
 ] as const;
 
 export type CityId = (typeof CITY_IDS)[number];

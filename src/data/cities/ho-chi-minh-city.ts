@@ -1,4 +1,9 @@
 import type { CityContent } from "../../types";
+import cityImg from "../../assets/images/ho-chi-minh-city.webp";
+import independencePalaceImg from "../../assets/images/ho-chi-minh-city-independence-palace.webp";
+import centralPostOfficeImg from "../../assets/images/ho-chi-minh-city-central-post-office.webp";
+import bitexcoSkydeckImg from "../../assets/images/ho-chi-minh-city-bitexco-skydeck.webp";
+import benThanhMarketImg from "../../assets/images/ho-chi-minh-city-ben-thanh-market.webp";
 
 export const hoChiMinhCity: CityContent = {
   city: {
@@ -7,6 +12,7 @@ export const hoChiMinhCity: CityContent = {
     country: "vietnam",
     generalInfo:
       "הו צ'י מין סיטי, שרוב התושבים עדיין מכנים בשמה הישן סייגון, היא העיר הגדולה והתוססת ביותר בווייטנאם ומרכזה הכלכלי. מקור השם \"סייגון\" שנוי במחלוקת, אך משוער שהוא קשור לנהר המקומי ולעצי הכותנה (או הקוקוס) שגדלו על גדותיו, והשם תועד לראשונה במאות ה-17-18. הצרפתים שכבשו את העיר במאה ה-19 אימצו את השם ובנו סביבו רובע קולוניאלי מהודר. ב-1975, עם איחוד וייטנאם תחת השלטון הקומוניסטי, שונה שמה הרשמי לכבודו של הו צ'י מין - אך ברחוב ובפי התושבים ממשיך השם סייגון לחיות לצד השם הרשמי. העיר בנויה כפסיפס של רבעים (דיסטריקטים) סביב נהר סייגון, כשמרכזה ההיסטורי (דיסטריקט 1) שוזר יחד בניינים קולוניאליים צרפתיים, שווקים סואנים וגורדי שחקים מנצנצים.",
+    image: cityImg,
   },
   places: [
     {
@@ -17,6 +23,7 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Bánh Mì Huỳnh Hoa",
       description:
         "מוסד ברחוב לה טהי ריאנג שפועל מאז 1989, ונחשב לכתובת המפורסמת ביותר בסייגון לבאן מי - הכריך הווייטנאמי. כל כריך מורכב מ-13 מרכיבים שונים, ולכן התור בחוץ הוא חלק קבוע מהחוויה.",
+      infoUrl: "https://www.facebook.com/banhmihuynhhoa/",
       sources: [
         "https://vietcetera.com/en/banh-mi-huynh-hoa-how-100k-and-35-years-built-a-saigon-icon",
         "https://danielfooddiary.com/2024/02/26/banhmihuynhhoa/",
@@ -30,6 +37,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Phở 2000",
       description:
         "מסעדת פו במרחק צעדים ספורים משוק בן טהאן, שהתפרסמה אחרי שהנשיא לשעבר ביל קלינטון אכל בה במהלך ביקורו ההיסטורי בווייטנאם ב-2000. עדיין פועלת ומגישה פו קלאסי לתיירים ולמקומיים כאחד.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d1122861-Reviews-PHO_2000-Ho_Chi_Minh_City.html",
       sources: [
         "https://www.vietnam.vn/en/quan-pho-ngay-trung-tam-tp-hcm-tung-don-tong-thong-my-bill-clinton-gio-ra-sao",
         "https://www.tripadvisor.com/Restaurant_Review-g293925-d1122861-Reviews-PHO_2000-Ho_Chi_Minh_City.html",
@@ -43,6 +52,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Bánh Xèo 46A",
       description:
         "פועלת מ-1945 בסמטה שקטה, וזוכה להכרה כתפריט מומלץ במדריך מישלן. מתמחה בבאן שאו - חביתת אורז וכורכום פריכה במילוי חזיר ושרימפס, המטוגנת עדיין על גחלים ומוגשת עם ירק טרי לעטיפה.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d1122087-Reviews-Banh_Xeo_46A-Ho_Chi_Minh_City.html",
       sources: [
         "https://migrationology.com/banh-xeo-46a-saigon/",
         "https://www.tripadvisor.com/Restaurant_Review-g293925-d1122087-Reviews-Banh_Xeo_46A-Ho_Chi_Minh_City.html",
@@ -57,9 +68,90 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Quán Ăn Ngon",
       description:
         "מסעדה מרווחת עם מטבח פתוח, במרחק שני רחובות מארמון העצמאות, שמרכזת תחת קורת גג אחת מנות רחוב ממגוון אזורים בווייטנאם. תפריט דו-לשוני ותור בשעות השיא - כדאי להזמין מקום מראש.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d1949058-Reviews-Quan_An_Ngon-Ho_Chi_Minh_City.html",
       sources: [
         "https://www.vietnamonline.com/restaurant/ho-chi-minh-city/quan-an-ngon-restaurant.html",
         "https://www.tripadvisor.com.my/Restaurant_Review-g293925-d1949058-Reviews-Quan_An_Ngon-Ho_Chi_Minh_City.html",
+      ],
+    },
+    {
+      id: "the-workshop-coffee",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "דה וורקשופ קופי",
+      nameLatin: "The Workshop Coffee",
+      description:
+        "בית קפה ספיישלטי בקומה השנייה של בניין ישן ברחוב נגו דוק קה, סמוך לדונג קוי - כניסה צנועה וגרם מדרגות מובילים למרחב תעשייתי עם תקרות גבוהות וחלונות ענקיים. מתמחים בקפה גל שלישי ובשיטות חליטה ידניות כמו פור-אובר, בדגש על מסחר ישיר מול חקלאי קפה מקומיים.",
+      sources: [
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d6991596-Reviews-The_Workshop-Ho_Chi_Minh_City.html",
+        "https://www.filternotes.com/ho-chi-minh-city/the-workshop-coffee",
+      ],
+    },
+    {
+      id: "cong-caphe-hcmc",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "קונג קפה",
+      nameLatin: "Cộng Cà Phê",
+      description:
+        "רשת קפה שנוסדה ב-2007 בהאנוי בידי האמנית לין דונג, בעיצוב נוסטלגי-צבאי בהשראת תקופת המלחמה - רהיטים משומשים, כלי שדה וצוות בסגנון מדים ירוקים. המשקה המזוהה ביותר הוא קפה קוקוס קפוא, קרם קוקוס על קפה וייטנאמי חזק.",
+      sources: [
+        "https://danielfooddiary.com/2024/02/20/congcaphe/",
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d14915438-Reviews-Cong_Caphe-Ho_Chi_Minh_City.html",
+      ],
+    },
+    {
+      id: "pho-hoa-pasteur",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "פו הואה פסטר",
+      nameLatin: "Phở Hòa Pasteur",
+      description:
+        "מוסד פו שפועל ברחוב פסטר בדיסטריקט 3 מאז 1968, קרוי על שם מוכר פו נודד שדחף עגלה בין השכונות עוד לפני שהמקום נפתח. פו בסגנון דרומי עשיר בעשבי תיבול ונבטים, מוגש עם עוגיית שאו קוואי - כתובת בוקר קלאסית, פתוח כבר מ-6:00.",
+      sources: [
+        "https://danielfooddiary.com/2024/02/27/phohoapasteur/",
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d1232846-Reviews-Pho_Hoa_Pasteur-Ho_Chi_Minh_City.html",
+      ],
+    },
+    {
+      id: "cuc-gach-quan",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "קוק גאק קואן",
+      nameLatin: "Cục Gạch Quán",
+      description:
+        "מסעדה ברחוב דאנג טאט בדיסטריקט 1, פרושה על שני בתים צרפתיים-קולוניאליים ישנים סביב בריכת קוי ירוקה, ומשחזרת את ביתה של סבתא הבעלים בעיצוב נוסטלגי של פריטי יומיום עתיקים. אין תפריט מראש - אומרים כמה סועדים, והמטבח מגיש כמה מנות ביתיות מסורתיות לפי בחירתו.",
+      sources: [
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d1717810-Reviews-Cuc_Gach_Quan-Ho_Chi_Minh_City.html",
+        "https://www.tripexpert.com/ho-chi-minh-city/restaurants/cuc-gach-quan",
+      ],
+    },
+    {
+      id: "anan-saigon",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "אנאן סייגון",
+      nameLatin: "Ănăn Saigon",
+      description:
+        "מסעדת השף פיטר קואונג פרנקלין בלב שוק הרחוב טון טאט דאם, שנפתחה ב-2017 והפכה למסעדה הראשונה בהו צ'י מין סיטי שזכתה בכוכב מישלן. המטבח הופך מנות רחוב וייטנאמיות מוכרות לגרסאות מודרניות ומעודנות, בשילוב טכניקה צרפתית.",
+      infoUrl: "https://anansaigon.com/",
+      sources: [
+        "https://guide.michelin.com/vn/en/article/people/anan-saigon-peter-cuong-franklin-ho-chi-minh-city-s-first-and-only-michelin-star",
+        "https://anansaigon.com/",
+      ],
+    },
+    {
+      id: "secret-garden-restaurant",
+      cityId: "ho-chi-minh-city",
+      category: "restaurant",
+      name: "סיקרט גארדן",
+      nameLatin: "Secret Garden Vietnamese Restaurant",
+      description:
+        "מסעדה על גג נסתרת מעל רחוב פסטר, שפועלת משנת 2012 ומגיעים אליה דרך סמטה לא מוארת וטיפוס בחמש קומות מדרגות בבניין מגורים לכאורה. מנות וייטנאמיות ביתיות מוגשות בין פנסים ועציצים, עם נוף פתוח על גגות העיר.",
+      sources: [
+        "https://www.tripadvisor.com/Restaurant_Review-g293925-d4573158-Reviews-Secret_Garden_Vietnamese_Restaurant-Ho_Chi_Minh_City.html",
+        "https://wanderlog.com/place/details/422902/secret-garden-restaurant",
       ],
     },
     {
@@ -70,6 +162,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Independence Palace (Reunification Palace)",
       description:
         "הארמון שבו הסתיימה מלחמת וייטנאם ב-30 באפריל 1975, כשטנק צבא הצפון פרץ את שעריו. שימורו כפי שהיה באותו יום - כולל חדר המפקדה והבונקר התת-קרקעי - הופך אותו לאתר היסטורי ולא רק לבניין מרשים.",
+      image: independencePalaceImg,
+      infoUrl: "https://dinhdoclap.gov.vn/en/",
       sources: [
         "https://viet-go.com/en/attractions/independence-palace-saigon-guide",
         "https://vietnamupr.com/guide-to-independence-palace-war-remnants-museum.html",
@@ -83,6 +177,7 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "War Remnants Museum",
       description:
         "מוזיאון שנפתח ב-1975 ושונה שמו ב-1995, המציג כלי נשק, תצלומים ועדויות ממלחמת וייטנאם מנקודת המבט הווייטנאמית. תערוכה מטלטלת ולא מתאימה לילדים קטנים, אך חוויה משמעותית למי שרוצה להבין את ההיסטוריה של המדינה.",
+      infoUrl: "https://baotangchungtichchientranh.vn",
       sources: [
         "https://silverlandhotels.com/war-remnants-museum-ho-chi-minh-travel-guide/",
         "https://vietnamtravel.com/war-remnants-museum-in-hcm-city/",
@@ -96,6 +191,9 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Saigon Central Post Office",
       description:
         "בניין קולוניאלי מרשים שנבנה בין 1886 ל-1891 בשילוב סגנון אירופאי ומזרח-אסייתי, עם שעון גדול שיובא מפריז מעל הכניסה. עדיין משמש כסניף דואר פעיל, ונמצא בצמוד לקתדרלת נוטרדאם של סייגון.",
+      image: centralPostOfficeImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d311089-Reviews-Saigon_Central_Post_Office-Ho_Chi_Minh_City.html",
       sources: [
         "https://vietcetera.com/en/the-saigon-central-post-office-inside-a-130-year-old-landmark-in-saigon",
         "https://www.atlasobscura.com/places/saigon-central-post-office",
@@ -109,6 +207,9 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Bitexco Financial Tower Skydeck",
       description:
         "מגדל 68 קומות בצורת ניצן לוטוס, עם מגדף מסוק בולט בצדו. קומת התצפית ה-49 מציעה נוף 360 מעלות על העיר ועל נהר סייגון, ובעיקר יפה לקראת שקיעה כשהעיר מתחילה להידלק באורות.",
+      image: bitexcoSkydeckImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d2037764-Reviews-Bitexco_Financial_Tower-Ho_Chi_Minh_City.html",
       sources: [
         "https://jackfruitadventure.com/bitexco-financial-tower-skydeck-ultimate-visiting-guide/",
         "https://www.klook.com/en-US/activity/5496-saigon-skydeck-bitexco-financial-tower-admission-ticket-ho-chi-minh-city/",
@@ -122,6 +223,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Nguyen Hue Walking Street",
       description:
         "שדרה להולכי רגל באורך כ-900 מטר, שהייתה במקור תעלה ונפתחה כרחוב הולכי רגל ב-2015. במרכזה מזרקה בצורת לוטוס עם מופעי מים ואור בלילה, ובשעות הערב היא הופכת למרחב מפגש תוסס למשפחות ולבני נוער.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d8290115-Reviews-Nguyen_Hue_Street-Ho_Chi_Minh_City.html",
       sources: [
         "https://www.vietnamairlines.com/us/en/plan-book/travel/travel-guide/nguyen-hue-walking-street",
         "https://www.tripadvisor.com/Attraction_Review-g293925-d8290115-Reviews-Nguyen_Hue_Street-Ho_Chi_Minh_City.html",
@@ -136,6 +239,9 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Ben Thanh Market",
       description:
         "השוק המזוהה ביותר עם סייגון, שנבנה ב-1914 בתקופה הקולוניאלית וניכר במגדל השעון ובחזית הצהובה-אוקר שלו. אלפי דוכנים למזון, בגדים ומזכרות, ומקום טוב להתמקח - אבל גם יעד מוכר לכייסים ולתיירי-יתר.",
+      image: benThanhMarketImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d311087-Reviews-Ben_Thanh_Market-Ho_Chi_Minh_City.html",
       sources: [
         "https://vinwonders.com/en/wonderpedia/news/ben-thanh-market-a-prominent-landmark-of-the-bustling-ho-chi-minh-city/",
         "https://oxalisadventure.com/ben-thanh-market-ho-chi-minh-city/",
@@ -149,6 +255,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Binh Tay Market",
       description:
         "השוק הסיטונאי הגדול בלב צ'ולון, הרובע הסיני של סייגון, שנבנה בסוף שנות ה-1920 בידי סוחר סיני-וייטנאמי אמיד. פחות מיועד לתיירים משוק בן טהאן ולכן חווית קנייה אותנטית יותר, עם אדריכלות עם השפעות סיניות.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d635380-Reviews-Binh_Tay_Market-Ho_Chi_Minh_City.html",
       sources: [
         "https://localvietnam.com/blog/binh-tay-market/",
         "https://www.vietnamairlines.com/us/en/plan-book/travel/travel-guide/binh-tay-market",
@@ -162,6 +270,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Bui Vien Walking Street",
       description:
         "רחוב הבאקפקרים של סייגון, שהוכרז רשמית כרחוב הולכי רגל ב-2017. ביום שקט יחסית עם בתי קפה ודוכני אוכל, ובלילה הופך למסיבת רחוב שוקקת עם מוזיקה, בירה זולה ואווירה שלא קיימת בשום מקום אחר בעיר.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d5505885-Reviews-Bui_Vien_Street-Ho_Chi_Minh_City.html",
       sources: [
         "https://vinpearl.com/en/bui-vien-street-saigon-nightlife-hot-spot",
         "https://vietnamdiscovery.com/ho-chi-minh-city/attractions/bui-vien-street/",
@@ -175,6 +285,8 @@ export const hoChiMinhCity: CityContent = {
       nameLatin: "Turtle Lake (Ho Con Rua)",
       description:
         "כיכר-מזרקה מוכרת בשם \"אגם הצב\", שהפכה לנקודת מפגש בלתי רשמית של נוער סייגון. בערבים מתיישבים מקומיים ישירות על המדרגות סביב האגם עם כוס קפה וייטנאמי מדוכני הרחוב - הזדמנות לראות שגרת חיים מקומית אמיתית.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293925-d10024158-Reviews-Turtle_Lake-Ho_Chi_Minh_City.html",
       sources: [
         "https://vinwonders.com/en/wonderpedia/news/turtle-lake-ho-chi-minh-city/",
         "https://gtrip.vn/travel-blogs/saigon-sidewalk-coffee",

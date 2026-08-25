@@ -4,14 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet" />
+    <!-- vite-plugin-pwa injects <link rel="manifest"> automatically at build time. -->
+    <meta name="theme-color" content="#47664b" />
+
+    <!-- iOS ignores the web app manifest entirely and needs its own tags. -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="מידע למטייל" />
+
     <title>מידע למטייל</title>
+
+    <!--
+      Boot loader: the gap between the browser parsing this HTML and React
+      actually painting the app (brief, but real on a slow phone). Inlined
+      here (not in the bundled src/index.css) so it renders before any JS or
+      external stylesheet loads - it has to work with nothing but this
+      document. `createRoot(...).render(...)` in main.tsx overwrites #root's
+      children the instant React mounts, so this disappears on its own; no
+      JS, no minimum display time, no splash/branding moment.
+    -->
+    <style>
+      .boot-loader-screen {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #faf9f4;
+      }
+      .boot-loader {
+        position: relative;
+        width: 80px;
+        height: 50px;
+      }
+      .boot-loader-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #424842;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        font-family: system-ui, sans-serif;
+        animation: boot-loader-text 3.5s ease both infinite;
+      }
+      .boot-loader-pill {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: #47664b;
+        border-radius: 50px;
+        transform: translateX(64px);
+        animation: boot-loader-pill 3.5s ease both infinite;
+      }
+      .boot-loader-pill::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #86a789;
+        border-radius: inherit;
+        animation: boot-loader-pill-inner 3.5s ease both infinite;
+      }
+      @keyframes boot-loader-text {
+        0% { letter-spacing: 1px; transform: translateX(0px); }
+        40% { letter-spacing: 2px; transform: translateX(26px); }
+        80% { letter-spacing: 1px; transform: translateX(32px); }
+        90% { letter-spacing: 2px; transform: translateX(0px); }
+        100% { letter-spacing: 1px; transform: translateX(0px); }
+      }
+      @keyframes boot-loader-pill {
+        0% { width: 16px; transform: translateX(0px); }
+        40% { width: 100%; transform: translateX(0px); }
+        80% { width: 16px; transform: translateX(64px); }
+        90% { width: 100%; transform: translateX(0px); }
+        100% { width: 16px; transform: translateX(0px); }
+      }
+      @keyframes boot-loader-pill-inner {
+        0% { transform: translateX(0px); width: 16px; }
+        40% { transform: translateX(0%); width: 80%; }
+        80% { width: 100%; transform: translateX(0px); }
+        90% { width: 80%; transform: translateX(15px); }
+        100% { transform: translateX(0px); width: 16px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-loader-text,
+        .boot-loader-pill,
+        .boot-loader-pill::before {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="boot-loader-screen" role="status" aria-live="polite" aria-label="טוען את האפליקציה">
+      <div class="boot-loader">
+        <p class="boot-loader-text">טוען</p>
+        <span class="boot-loader-pill"></span>
+      </div>
+    </div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,4 +1,8 @@
 import type { CityContent } from "../../types";
+import cityImg from "../../assets/images/ha-long-bay.webp";
+import tiTopIslandImg from "../../assets/images/ha-long-bay-ti-top-island.webp";
+import sungSotCaveImg from "../../assets/images/ha-long-bay-sung-sot-cave.webp";
+import cuaVanFloatingVillageImg from "../../assets/images/ha-long-bay-cua-van-floating-village.webp";
 
 export const haLongBay: CityContent = {
   city: {
@@ -7,6 +11,7 @@ export const haLongBay: CityContent = {
     country: "vietnam",
     generalInfo:
       "הא לונג ביי הוא מפרץ בצפון וייטנאם שבו כמעט 2,000 איי גיר (קארסט) מזדקרים ממים בצבע אזמרגד - שרידי מדף אבן גיר ימי שהצטבר לאורך מאות מיליוני שנים ונחשף בתהליכי קארסט נרחבים. שמו, שפירושו \"דרקון יורד\", קשור לאגדה עממית שלפיה משפחת דרקונים ירדה מהשמיים כדי להגן על וייטנאם מפני פולשים ופלטה מפיה אבנים יקרות שהפכו לאיים - אך השם עצמו הופיע לראשונה רק במפות ימיות צרפתיות בסוף המאה ה-19. אונסק\"ו הכריזה על המפרץ אתר מורשת עולמית ב-1994 בזכות נופו החריג, ושוב ב-2000 בזכות ערכו הגיאולוגי. מה שהופך את הביקור למיוחד הוא שאי אפשר לחוות את הא לונג ביי ביום אחד - החוויה האמיתית היא לילה שלם על סיפון ספינה, בין המצוקים.",
+    image: cityImg,
   },
   places: [
     {
@@ -17,6 +22,9 @@ export const haLongBay: CityContent = {
       nameLatin: "Ti Top Island",
       description:
         "אי קטן ואייקוני שרוב שייטי הלילה עוצרים בו - חוף בצורת סהר עם חול לבן, ומעליו כ-400 מדרגות אבן המובילות לתצפית פנורמית על אלפי איי הגיר של המפרץ. מקום מבוקש לזריחה או שקיעה, ולכן צפוף במיוחד בעונת השיא.",
+      image: tiTopIslandImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d4795456-Reviews-Ti_Top_Island-Halong_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vinpearl.com/en/ti-top-island-an-ultimate-guide-to-the-pearl-in-the-heart-of-halong-bay",
         "https://hanoiexploretravel.com/halong-bay/titop-island",
@@ -30,6 +38,8 @@ export const haLongBay: CityContent = {
       nameLatin: "Hon Trong Mai (Trong Mai Islet)",
       description:
         "שני מצוקי גיר צרים שהתעצבו באלפי שנות שחיקת רוח וגלים לצורת תרנגול ותרנגולת הניצבים זה מול זה - אחד הסמלים המצולמים והמזוהים ביותר של הא לונג ביי, ומככב כמעט בכל חוברת תיירות של המפרץ.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d7940447-Reviews-Hon_Ga_Choi_Island-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vinpearl.com/en/trong-mai-islet",
         "https://vinwonders.com/en/wonderpedia/news/fighting-cocks-islet-ha-long/",
@@ -43,6 +53,9 @@ export const haLongBay: CityContent = {
       nameLatin: "Sung Sot Cave",
       description:
         "המערה הגדולה והמפורסמת ביותר במפרץ, שגילו חוקרים צרפתים ב-1901 וכינוה \"מערת ההפתעה\" בשל הניגוד בין הפתח הצר לחלל הענק שנחשף מאחוריו. שני האולמות שלה, בגובה של כ-30 מטר, מלאים בנטיפים ובזקיפים בצורות מרשימות.",
+      image: sungSotCaveImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d456290-Reviews-Sung_Sot_Cave-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://oxalisadventure.com/explore-sung-sot-cave/",
         "https://vinpearl.com/en/sung-sot-cave-contemplate-a-unique-masterpiece-of-nature-in-halong-bay",
@@ -56,6 +69,8 @@ export const haLongBay: CityContent = {
       nameLatin: "Thien Cung Cave",
       description:
         "מערת \"ארמון השמיים\" התגלתה במקרה ב-1993 בידי דייגים שנמלטו מסערה, ונפתחה לציבור ב-1998. שלושת חדריה מלאים בנטיפים דרמטיים, ולפי אגדה מקומית זהו הארמון שבו התיישב מלך הדרקונים לאחר שהגן על העם מפולשים.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d2027899-Reviews-Dong_Thien_Cung-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vietnamtravel.com/thien-cung-cave-halong-bay/",
         "https://www.visithalongbay.com/caves/thien-cung-cave.html",
@@ -69,6 +84,8 @@ export const haLongBay: CityContent = {
       nameLatin: "Dau Go Cave",
       description:
         "מערה על אי דאו גו הקרויה על שם קורות עץ מחודדות שהטמין המצביא טראן הונג דאו במאה ה-13 בנהר בך דאנג כדי להטביע ספינות מונגוליות פולשות. שלושה חדרים מוארים חלקית, מלאים בתצורות סלע ייחודיות.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d456291-Reviews-Dau_Go_Cave-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vinpearl.com/en/dau-go-cave-explore-one-of-the-most-enchanting-caves-of-ha-long-bay",
         "https://hanoiexploretravel.com/halong-bay/dau-go-cave",
@@ -82,6 +99,9 @@ export const haLongBay: CityContent = {
       nameLatin: "Cua Van Floating Village",
       description:
         "אחד הכפרים הצפים המפורסמים בעולם - בתי דייגים המעוגנים על חביות וחוטי במבוק בלב המפרץ, ובו גם בית הספר הצף היחיד באזור. עד היום מתגוררות בו משפחות שפרנסתן מדיג, ואפשר לסייר בו בסירת חתירה קטנה.",
+      image: cuaVanFloatingVillageImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d7915938-Reviews-Cua_Van_Floating_Village-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vinpearl.com/en/cua-van-floating-village-ha-long-a-great-place-to-admire-charming-nature",
         "https://vinwonders.com/en/wonderpedia/news/cua-van-floating-village-a-charming-village-in-vietnam/",
@@ -95,6 +115,8 @@ export const haLongBay: CityContent = {
       nameLatin: "Luon Cave",
       description:
         "מנהרת סלע טבעית באורך כ-60 מטר שאפשר לחצות רק בקיאק או בסירת חתירה נמוכה, ומאחוריה נחשפת לגונה סגורה ושקטה שבה חיה להקת קופי זהב. הא לונג ביי נחשבת לאחד מיעדי הקיאקים המובילים בעולם.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g293923-d25280571-Reviews-Hang_Luon_Cave-H_Long_Bay_Quang_Ninh_Province.html",
       sources: [
         "https://vinpearl.com/en/luon-cave-ha-long-bay",
         "https://vinwonders.com/en/wonderpedia/news/luon-cave-ha-long-bay/",
@@ -108,9 +130,40 @@ export const haLongBay: CityContent = {
       nameLatin: "Bhaya Cruises",
       description:
         "אחת מחברות הספינות הוותיקות והמוכרות במפרץ, הפועלת כמעט שני עשורים ומציעה שייטי לילה עם כל הארוחות כלולות - כולל מאפייה משלה על הסיפון - וקוקטייל שקיעה בסיפון העליון, מנהג כמעט קבוע בשייטי לילה במפרץ.",
+      infoUrl: "https://bhayacruises.com/",
       sources: [
         "https://bhayacruises.com/",
         "https://www.rainforestcruises.com/cruises/bhaya-premium-halong-bay",
+      ],
+    },
+    {
+      id: "hong-hanh-seafood",
+      cityId: "ha-long-bay",
+      category: "restaurant",
+      name: "הונג האן",
+      nameLatin: "Nhà Hàng Hồng Hạnh (Hong Hanh)",
+      description:
+        "מסעדת פירות ים ותיקה ומוכרת בבאי צ'אי שפועלת כבר יותר משני עשורים, עם דגים, שרימפס וסרטנים חיים באקווריומי זכוכית שמבשלים רק לפי הזמנה. יעד קבוע למי שמחפש ארוחת פירות ים איכותית ביבשה, לפני או אחרי שייט במפרץ.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g293923-d4469890-Reviews-Nha_Hang_Hong_Hanh-H_Long_Bay_Quang_Ninh_Province.html",
+      sources: [
+        "https://vinpearl.com/en/ha-long-bay-restaurants-the-15-best-choices-for-your-food-tour",
+        "https://www.tripadvisor.com/Restaurant_Review-g293923-d4469890-Reviews-Nha_Hang_Hong_Hanh-H_Long_Bay_Quang_Ninh_Province.html",
+      ],
+    },
+    {
+      id: "cua-vang-restaurant",
+      cityId: "ha-long-bay",
+      category: "restaurant",
+      name: "קואה וואנג",
+      nameLatin: "Cua Vang Restaurant (Golden Crab)",
+      description:
+        "מסעדת סרטנים בבאי צ'אי שכל המנות בה מתבשלות בסיר חרס לשימור הטעם הטבעי, ומתמחה בסרטן זהוב ברוטב מלוח וסרטן מאודה עם ג'ינג'ר. הבניין בעל שלוש הקומות ותאורת הניאון הצבעונית הופך אותה לעצירה מוכרת בין מפעילי שייט לפני עלייה לספינה.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g293923-d4243414-Reviews-Cua_Vang_Restaurant-H_Long_Bay_Quang_Ninh_Province.html",
+      sources: [
+        "https://wanderlog.com/place/details/1137897/nh%C3%A0-h%C3%A0ng-cua-v%C3%A0ng-b%C3%A3i-ch%C3%A1y",
+        "https://www.tripadvisor.com/Restaurant_Review-g293923-d4243414-Reviews-Cua_Vang_Restaurant-H_Long_Bay_Quang_Ninh_Province.html",
       ],
     },
   ],

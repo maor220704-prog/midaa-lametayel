@@ -2,45 +2,27 @@ import type { City, CityContent, CityId, Phrase, Place, Warning } from "../../ty
 
 import { hanoi } from "./hanoi";
 import { haLongBay } from "./ha-long-bay";
-import { sapa } from "./sapa";
-import { ninhBinh } from "./ninh-binh";
-import { hoiAn } from "./hoi-an";
-import { daNang } from "./da-nang";
-import { hue } from "./hue";
-import { dalat } from "./dalat";
-import { muiNe } from "./mui-ne";
-import { nhaTrang } from "./nha-trang";
-import { hoChiMinhCity } from "./ho-chi-minh-city";
 import { phuQuoc } from "./phu-quoc";
-import { bangkok } from "./bangkok";
-import { chiangMai } from "./chiang-mai";
-import { pai } from "./pai";
-import { kohSamuiKohPhangan } from "./koh-samui-koh-phangan";
+import { hoChiMinhCity } from "./ho-chi-minh-city";
+import { daNang } from "./da-nang";
+import { hoiAn } from "./hoi-an";
 import { phuket } from "./phuket";
-import { krabi } from "./krabi";
 
-/** In CITY_IDS order: Vietnam first, then Thailand. */
+/**
+ * In CITY_IDS order: the 7 cities actually on the trip itinerary.
+ * The other 11 cities originally proposed in PRD.md section 9 were removed
+ * in the Phase 6 expansion (24/08/2026) - see the note there.
+ */
 export const cityContents: CityContent[] = [
   // Vietnam
   hanoi,
   haLongBay,
-  sapa,
-  ninhBinh,
-  hoiAn,
-  daNang,
-  hue,
-  dalat,
-  muiNe,
-  nhaTrang,
-  hoChiMinhCity,
   phuQuoc,
+  hoChiMinhCity,
+  daNang,
+  hoiAn,
   // Thailand
-  bangkok,
-  chiangMai,
-  pai,
-  kohSamuiKohPhangan,
   phuket,
-  krabi,
 ];
 
 export const cities: City[] = cityContents.map((c) => c.city);

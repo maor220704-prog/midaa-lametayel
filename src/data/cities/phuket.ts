@@ -1,4 +1,10 @@
 import type { CityContent } from "../../types";
+import cityImg from "../../assets/images/phuket.webp";
+import bigBuddhaImg from "../../assets/images/phuket-big-buddha.webp";
+import watChalongImg from "../../assets/images/phuket-wat-chalong.webp";
+import promthepCapeImg from "../../assets/images/phuket-promthep-cape.webp";
+import karonViewpointImg from "../../assets/images/phuket-karon-viewpoint.webp";
+import lardYaiWalkingStreetImg from "../../assets/images/phuket-lard-yai-walking-street.webp";
 
 const MICHELIN_LIST_SOURCE = "https://www.phuket101.net/phuket-michelin-guide-list/";
 
@@ -9,6 +15,7 @@ export const phuket: CityContent = {
     country: "thailand",
     generalInfo:
       "פוקט היא האי הגדול בתאילנד, ולפי הגרסה המקובלת ביותר שמה מקורו במילה המלאית \"בוקיט\", שפירושה גבעה - כך נראה האי מרחוק בזכות שדרת הגבעות המיוערות שעוברת לכל אורכו. בעבר נקרא האי בפי הסוחרים האירופים \"ג'ונק סיילון\", עיוות של השם המלאי טאנג'ונג סאלאנג, ורק כשמרכז המנהל עבר לעיירת כרייה פנימית בשם פוקט אימץ האי את שמו הנוכחי. הכלכלה ההיסטורית נשענה על מכרות בדיל, שמשכו גלי הגירה של פועלים סינים-הוקיאן שהתחתנו עם נשים תאיות מקומיות ויצרו את קהילת ה\"באבא\" הפרנקנית הייחודית - מיזוג שניכר עד היום באדריכלות הסינו-פורטוגזית של העיר העתיקה ובמטבח המקומי. סביב הגבעות הפנימיות משתרעים חופי החול הלבן שהפכו את פוקט ליעד התיירותי המוביל של תאילנד.",
+    image: cityImg,
   },
   places: [
     {
@@ -19,6 +26,8 @@ export const phuket: CityContent = {
       nameLatin: "Go Benz",
       description:
         "דוכן אטריות ודייסת אורז ותיק בעיר העתיקה, עם כוכב ביב גורמה של מישלן ברציפות מאז 2019 - כולל מדריך 2026. מתמחה במרק חזיר מתובל ואטריות אורז מגולגלות, נפתח רק בערב ורוב המנות אוזלות עד סופו.",
+      infoUrl:
+        "https://www.tripadvisor.com/Restaurant_Review-g1215781-d7690429-Reviews-Go_Benz_Phuket-Phuket_Town_Phuket.html",
       sources: [
         MICHELIN_LIST_SOURCE,
         "https://www.phuket101.net/ko-benz-phuket/",
@@ -32,6 +41,7 @@ export const phuket: CityContent = {
       nameLatin: "One Chun Cafe & Restaurant",
       description:
         "מסעדה משפחתית ותיקה ברחוב תפקסטרי בעיר העתיקה, עם כוכב ביב גורמה של מישלן כבר כמה שנים ברציפות, המתמחה במטבח דרום-תאילנדי מלא ופחות מוכר לתיירים. המקום קטן ומתמלא במהירות, כדאי להגיע מוקדם.",
+      infoUrl: "https://www.facebook.com/OneChunPhuket/",
       sources: [
         MICHELIN_LIST_SOURCE,
         "https://www.phuket101.net/one-chun-restaurant/",
@@ -45,6 +55,7 @@ export const phuket: CityContent = {
       nameLatin: "Kopitiam by Wilai",
       description:
         "בית קפה-מסעדה נוסטלגי ברחוב תלנג ההיסטורי, ששמו פירושו \"בית קפה\" בהוקיאן-מלאית - מגיש מתכונים משפחתיים איקוניים כמו מרק עצמות חזיר בק קוט טה ופאד תאי בסגנון פוקטי חריף. תמיד עמוס, ולעיתים יש רשימת המתנה.",
+      infoUrl: "https://www.facebook.com/kopitiambywilai/",
       sources: [
         "https://www.fodors.com/world/asia/thailand/phuket-and-the-andaman-coast/restaurants/reviews/kopitiam-by-wilai-588644",
         "https://daniaexperiences.com/2025/01/07/review-kopitiam-by-wilai-cafe-thalang-road-phuket-thailand/",
@@ -58,9 +69,87 @@ export const phuket: CityContent = {
       nameLatin: "Baan Rim Pa",
       description:
         "מסעדת מטבח מלכותי תאילנדי ותיקה על צוק מעל מפרץ פאטונג, עם נגינת פסנתר חיה מדי ערב לצד נוף השקיעה על הים. מומלץ להזמין מקום מראש ולהגיע מוקדם בשביל השולחנות עם הנוף הטוב ביותר.",
+      infoUrl: "https://www.baanrimpa.com/",
       sources: [
         "https://www.fodors.com/world/asia/thailand/phuket-and-the-andaman-coast/restaurants/reviews/baan-rim-pa-433186",
         "https://www.tripadvisor.com/Restaurant_Review-g297930-d1073248-Reviews-Baan_Rim_Pa-Patong_Kathu_Phuket.html",
+      ],
+    },
+    {
+      id: "roti-chaofa",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "רוטי צ'אופה",
+      nameLatin: "Roti Chaofa",
+      description:
+        "דוכן רוטי מוסלמי-תאילנדי ותיק בעיר העתיקה, שפועל כבר יותר משלושים שנה וזכה בכוכב ביב גורמה של מישלן במדריך 2025. הרוטי הפריך מוגש עם קארי עז או קארי מסאמן בקר, המנה החתומה של המקום. נפתח מוקדם וסוגר כבר ב-13:30, ולכן מתאים לארוחת בוקר בלבד.",
+      infoUrl: "https://guide.michelin.com/jp/en/phuket-region/phuket/restaurant/roti-chaofa",
+      sources: [MICHELIN_LIST_SOURCE, "https://www.phuket101.net/roti-chaofa/"],
+    },
+    {
+      id: "kopi-de-phuket",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "קופי דה פוקט",
+      nameLatin: "Kopi de Phuket",
+      description:
+        "בית קפה-מסעדה ברחוב פוקט שפועל ברציפות מאז 1999, עם עיצוב נוסטלגי של פריטי יד שנייה מהשישים ונגיעה סינית מובהקת. מתמחה בקפה בסגנון פוקטי מקומי ובטוסט פריך עם קרם פנדן ביתי, ומהווה עוגן ותיק לצד בתי הקפה החדשים והמצולמים שצצו סביב העיר העתיקה בשנים האחרונות.",
+      sources: [
+        "https://www.phuket101.net/kopi-de-phuket/",
+        "https://www.tripadvisor.com/Restaurant_Review-g2315818-d886494-Reviews-Kopi_de_Phuket_Restaurant_Coffee-Talat_Yai_Phuket_Town_Phuket.html",
+      ],
+    },
+    {
+      id: "china-inn-cafe",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "צ'יינה אין קפה",
+      nameLatin: "China Inn Cafe",
+      description:
+        "בית קפה וגן ירוק בבית עסק סינו-פורטוגזי משוחזר ברחוב תלנג, ששימש בעבר לחילופי מטבע לפועלי הכרייה הסינים שהגיעו לאי. פתוח לארוחות צהריים בלבד, משני עד שבת (סגור בימי ראשון), ומגיש שילוב של מנות תאילנדיות לצד מטבח מערבי קליל.",
+      sources: [
+        "https://www.tripadvisor.com/Restaurant_Review-g1215781-d1449612-Reviews-China_Inn_Cafe-Phuket_Town_Phuket.html",
+        "https://www.phuket101.net/china-inn-phuket/",
+      ],
+    },
+    {
+      id: "the-neighbors-cafe",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "דה נייבורס קפה",
+      nameLatin: "The Neighbors Cafe",
+      description:
+        "בית קפה-בוטיק שפועל גם כאכסניה, בעיצוב סינו-פורטוגזי בלב העיר העתיקה, ומגיש ארוחות בוקר מלאות מהבוקר ועד הערב - מביצי בנדיקט ועד טוסט אבוקדו וקפה ערביקה תאילנדי טהור. פתוח מ-7:30 בבוקר, ומתאים כתחנה ראשונה לפני סיור ברגל ברחובות העיר העתיקה.",
+      sources: [
+        "https://www.tripadvisor.com/Restaurant_Review-g1215781-d13117696-Reviews-The_Neighbors_Kitchen-Phuket_Town_Phuket.html",
+        "https://theperpetualsaturday.com/the-neighbours-cafe-phuket/",
+      ],
+    },
+    {
+      id: "raya-restaurant",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "ראיא",
+      nameLatin: "Raya Restaurant",
+      description:
+        "מסעדה משפחתית בבית סינו-פורטוגזי בן כמאה שנה בעיר העתיקה, שנוסדה ב-1994 ומתמחה במטבח פוקטי-דרום-תאילנדי מסורתי. המנה החתומה היא קאנג פו, קארי צהוב עם בשר סרטן ואטריות אורז. ביקורות מהשנה האחרונה מצביעות על חוסר עקביות באיכות בשעות עומס, ולכן כדאי להגיע מוקדם.",
+      sources: [
+        "https://www.phuket101.net/raya-house/",
+        "https://www.tripadvisor.com/Restaurant_Review-g1215781-d13989518-Reviews-Raya_Restaurant_Phuket_Old-Phuket_Town_Phuket.html",
+      ],
+    },
+    {
+      id: "blue-elephant-phuket",
+      cityId: "phuket",
+      category: "restaurant",
+      name: "בלו אלפנט",
+      nameLatin: "Blue Elephant Phuket",
+      description:
+        "מסעדת מטבח תאילנדי מלכותי בארמון המושל המשוחזר משנת 1903, בסגנון סינו-פורטוגזי ומוקף גנים - חלק משרשרת בלו אלפנט הבינלאומית, שמפעילה במקום גם בית ספר לבישול תאילנדי. מתאימה לארוחה חגיגית עם רקע אדריכלי יוצא דופן, ולא רק לאוכל עצמו.",
+      infoUrl: "https://blueelephant.com/restaurant/phuket-restaurant/",
+      sources: [
+        "https://blueelephant.com/restaurant/phuket-restaurant/",
+        "https://www.tripadvisor.com/Restaurant_Review-g1215781-d1759741-Reviews-Blue_Elephant_Cooking_School_Restaurant_Phuket-Phuket_Town_Phuket.html",
       ],
     },
     {
@@ -71,6 +160,8 @@ export const phuket: CityContent = {
       nameLatin: "Phuket Big Buddha",
       description:
         "פסל בודהה עשוי בטון ומצופה שיש בורמזי לבן, בגובה 45 מטר על גבעת נאקרד - אחד הסמלים המזוהים ביותר עם האי, שנראה למרחקים מחלקים גדולים ממנו. הפסל נסגר לכשנה וחצי בעקבות מפולת אדמה ב-2024, ונפתח מחדש בתחילת 2026.",
+      image: bigBuddhaImg,
+      infoUrl: "https://www.mingmongkolphuket.com/",
       sources: [
         "https://www.phuket101.net/phuket-big-buddha/",
         "https://en.wikipedia.org/wiki/Phuket_Big_Buddha",
@@ -84,6 +175,8 @@ export const phuket: CityContent = {
       nameLatin: "Wat Chalong",
       description:
         "המקדש החשוב והמבוקר ביותר בפוקט, ובו פסלי הזהב של שני הנזירים לואנג פו צ'אם ולואנג פו צ'ואנג - שהפכו את המנזר למקלט ובית חולים שדה בזמן מרד הכורים הסינים ב-1876, וזכו להערצת התושבים המקומיים עד היום.",
+      image: watChalongImg,
+      infoUrl: "https://www.wat-chalong-phuket.com/",
       sources: [
         "https://blog.bangkokair.com/en/wat-chalong-temple-phuket/",
         "https://en.wikipedia.org/wiki/Wat_Chalong",
@@ -97,6 +190,7 @@ export const phuket: CityContent = {
       nameLatin: "Thai Hua Museum",
       description:
         "מוזיאון בבניין סינו-פורטוגזי מ-1934 שהיה בית הספר הסיני הראשון בפוקט, ומציג בשלושה-עשר חדרים את סיפור מהגרי הכרייה הסינים, קהילת הבאבא הייחודית והאדריכלות המקומית - מבוא נעים לסיור בעיר העתיקה שסביבו.",
+      infoUrl: "https://www.facebook.com/ThaihuaMuseum/",
       sources: [
         "https://www.phuket101.net/thai-hua-museum/",
         "https://www.phuket.net/things-to-do/sightseeing/museums/phuket-thai-hua-museum/",
@@ -110,6 +204,9 @@ export const phuket: CityContent = {
       nameLatin: "Promthep Cape",
       description:
         "כף סלעים בקצה הדרומי של האי, הנחשב לתצפית השקיעה הפופולרית ביותר בפוקט - עם נוף פתוח לים אנדמן ולאיים הסמוכים. כדאי להגיע כשעה לפני השקיעה כדי למצוא חניה ומקום תצפית נוח.",
+      image: promthepCapeImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g297934-d553523-Reviews-Promthep_Cape-Rawai_Phuket.html",
       sources: ["https://www.phuket101.net/promthep-cape/"],
     },
     {
@@ -120,6 +217,9 @@ export const phuket: CityContent = {
       nameLatin: "Karon Viewpoint",
       description:
         "תצפית חינמית שמגלה שלושה חופים בבת אחת - קטה נוי הקרוב מתחת, קטה עם אי הסרטנים הקטן מולו, וקארון המשתרך למרחוק. השם התאי המקומי, קו סאם האד, פירושו פשוט \"גבעת שלושת החופים\".",
+      image: karonViewpointImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g1215780-d3448295-Reviews-Karon_Viewpoint-Karon_Phuket.html",
       sources: [
         "https://www.phuket101.net/karon-viewpoint/",
         "https://www.jamiesphuketblog.com/2011/02/phuket-viewpoint.html",
@@ -133,6 +233,8 @@ export const phuket: CityContent = {
       nameLatin: "Freedom Beach",
       description:
         "חוף מבודד באורך כ-300 מטר בתוך מפרץ קטן מדרום לפאטונג, נגיש בעיקר בסירת לונגטייל או ברגל דרך שביל ג'ונגל קצר - ולכן נשאר שקט ופחות עמוס מחופי האי הראשיים.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g297930-d778266-Reviews-Freedom_Beach-Patong_Kathu_Phuket.html",
       sources: [
         "https://www.holidify.com/places/phuket/freedom-beach-sightseeing-124567.html",
         "https://www.phuket101.net/freedom-beach/",
@@ -146,6 +248,9 @@ export const phuket: CityContent = {
       nameLatin: "Lard Yai Walking Street",
       description:
         "רחוב תלנג ההיסטורי בעיר העתיקה נסגר לתנועה מדי יום ראשון והופך לשוק רחוב תוסס על רקע הבניינים הסינו-פורטוגזיים - דוכני אוכל רחוב, אמנים ונגנים. פתוח מ-16:00 עד 22:00.",
+      image: lardYaiWalkingStreetImg,
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g1215781-d8776186-Reviews-Sunday_Walking_Street_Market_Lard_Yai-Phuket_Town_Phuket.html",
       sources: [
         "https://www.phuket101.net/phuket-walking-street/",
         "https://www.jamiesphuketblog.com/2014/06/sunday-walking-street-market-lard-yai.html",
@@ -159,6 +264,8 @@ export const phuket: CityContent = {
       nameLatin: "Chillva Market",
       description:
         "שוק לילה מקומי וטרנדי בעיר פוקט, פתוח בין חמישי לשבת בשעות הערב - דוכני אוכל יצירתיים, בגדים וינטג' ומוזיקה חיה, עם קהל שמורכב בעיקר מתושבים מקומיים ופחות תיירים מהשווקים הגדולים באי.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g1215781-d11741144-Reviews-Chillva_Market-Phuket_Town_Phuket.html",
       sources: [
         "https://www.tripadvisor.com/Attraction_Review-g1215781-d11741144-Reviews-Chillva_Market-Phuket_Town_Phuket.html",
         "https://kamalabeachestate.com/chillva-market-phuket/",
@@ -185,6 +292,8 @@ export const phuket: CityContent = {
       nameLatin: "Jui Tui Shrine",
       description:
         "אירוע דתי-תרבותי ייחודי לפוקט: תשעה ימים בספטמבר-אוקטובר (לפי הלוח הירחי הסיני) של טיהור, תהלוכות וניקוב גוף קיצוני, לזכר תשעת קיסרי השמיים. מרכז הטקסים הוא מקדש ג'וי טוי העתיק בעיר פוקט - כדאי לבדוק מראש את תאריכי השנה הספציפית, כי הם משתנים משנה לשנה.",
+      infoUrl:
+        "https://www.tripadvisor.com/Attraction_Review-g2315817-d13148276-Reviews-Jui_Tui_Shrine-Talat_Nuea_Phuket_Town_Phuket.html",
       sources: [
         "https://www.phuket101.net/phuket-vegetarian-festival/",
         "https://www.phuket101.net/jui-tui-shrine-in-phuket-town/",

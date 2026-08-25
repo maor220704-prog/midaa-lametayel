@@ -5,6 +5,7 @@ import { placesByCity, warningsByCity } from "../data/cities/index";
 import { isCityId, type Category, type CityId } from "../types";
 import Icon from "../components/Icon";
 import PlaceCard from "../components/PlaceCard";
+import CityHeroCarousel from "../components/CityHeroCarousel";
 
 type TabKey = "info" | "food" | "see" | "shop" | "special" | "warnings";
 
@@ -65,7 +66,7 @@ export default function CityPage() {
 
   if (!city) {
     return (
-      <div className="min-h-screen bg-background px-4 py-6 pb-24">
+      <div className="min-h-screen bg-background px-4 py-6">
         <Link to="/" className="text-on-surface-variant">
           <Icon name="arrow_forward" className="align-middle" /> חזרה לרשימת הערים
         </Link>
@@ -75,17 +76,33 @@ export default function CityPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-screen bg-background">
+      <CityHeroCarousel city={city} places={places} />
+
       <header className="sticky top-0 z-10 bg-primary px-4 pb-3 pt-6 text-on-primary shadow-sm">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <Link
+              to="/"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-on-primary/10"
+              aria-label="חזרה לרשימת הערים"
+            >
+              <Icon name="arrow_forward" />
+            </Link>
+            <h1 className="text-xl font-bold">{city.name}</h1>
+          </div>
+
+          {/* Bottom NavBar is hidden on city pages (design.md section 5, note
+              24/08/2026), so this is the only way back to the dictionary
+              from here - small and muted, on purpose, so it doesn't compete
+              with the city name or the tabs below. */}
           <Link
-            to="/"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-on-primary/10"
-            aria-label="חזרה לרשימת הערים"
+            to="/dictionary"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-on-primary/70 transition-colors active:bg-on-primary/10"
+            aria-label="מילון ביטויים"
           >
-            <Icon name="arrow_forward" />
+            <Icon name="translate" className="text-[20px]" />
           </Link>
-          <h1 className="text-xl font-bold">{city.name}</h1>
         </div>
 
         {availableSections.length > 0 && (
@@ -94,9 +111,9 @@ export default function CityPage() {
               <button
                 key={s.key}
                 onClick={() => setActiveTab(s.key)}
-                className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-all duration-200 ${
                   currentTab === s.key
-                    ? "bg-on-primary text-primary"
+                    ? "tab-chip-active"
                     : "bg-on-primary/15 text-on-primary"
                 }`}
               >
